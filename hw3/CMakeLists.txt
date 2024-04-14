@@ -3,24 +3,10 @@ cmake_minimum_required(VERSION 3.5)
 project(03.homework)
 
 add_executable(
-	check_value
+	guess_the_number
+	guess_the_number.cpp
+	check_value.h
 	check_value.cpp
 	random_value.h
 	random_value.cpp
 )
-
-# add_executable(
-# 	random_value
-# 	random_value.h
-# 	random_value.cpp
-# )
-
-# add_executable(
-# 	high_scores
-# 	high_scores.cpp
-# )
-
-# add_executable(
-# 	argument
-# 	argument.cpp
-# )

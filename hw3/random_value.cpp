@@ -7,13 +7,11 @@
 
 const int get_random_value() {
 
-	const int max_value = 100;
+	const int max_value = 100; // max value, which you can get [0 .. max_value]
 
 	std::srand(std::time(nullptr)); // use current time as seed for random generator
 
-	const int random_value = std::rand() % 100;
-
-	std::cout << random_value << std::endl;
+	const int random_value = std::rand() % max_value;
 
 	return random_value;
 }

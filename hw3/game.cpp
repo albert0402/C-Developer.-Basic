@@ -1,19 +1,22 @@
+#include "game.h"
 #include "random_value.h"
 
 #include <iostream>
 
-int main() {
+int guess_game() {
 	
-	const int target_value = get_random_value();
-	std::cout << "target_value " << target_value << std::endl;
+	const int target_value = get_random_value(); // get random number from function 'get_random_value'
 	
 	int current_value = 0;
+	int count_attempt = 0; // counter of attempts
 	bool not_win = true;
 
 	std::cout << "Enter your guess:" << std::endl;
 
 	do {
 		std::cin >> current_value;
+
+		count_attempt++; // add +1 attempt
 
 		if (current_value < target_value) {
 			std::cout << "Oh no, current value '" << current_value << "' is less than target value." << std::endl;
@@ -22,11 +25,11 @@ int main() {
 			std::cout << "Oh no, current value '" << current_value << "' is greater than target value."<< std::endl;
 		}
 		else {
-			std::cout << "Congratulations, you win!" << std::endl;
+			std::cout << "Congratulations, you win! Total attempts = " << count_attempt << std::endl;
 			break;
 		}
 
 	} while(true);
 
-	return 0;
+	return count_attempt; // count of attempts
 }

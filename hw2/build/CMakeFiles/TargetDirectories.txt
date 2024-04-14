@@ -1,3 +1,0 @@
-/Users/albertbolotnov/otus_C-Developer.Basic/otus_C-Developer.Basic/build/CMakeFiles/hello_world.dir
-/Users/albertbolotnov/otus_C-Developer.Basic/otus_C-Developer.Basic/build/CMakeFiles/edit_cache.dir
-/Users/albertbolotnov/otus_C-Developer.Basic/otus_C-Developer.Basic/build/CMakeFiles/rebuild_cache.dir
