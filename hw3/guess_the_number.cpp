@@ -1,17 +1,25 @@
-#include "game.h"
-#include "random_value.h"
+#include "include/game.h"
+#include "include/random_value.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 
-int main() {
+int main(int argc, char *argv[]) {
 
+	int max_value = 100; // default max value
+
+	if (argc > 1) {
+		std::string param = argv[1];
+		if (param == "-max"){
+		max_value = std::stoi(argv[2]);
+	}
+	}
+	
 	// Ask about name
 	std::cout << "Hi! Enter your name, please:" << std::endl;
 	std::string user_name;
 	std::cin >> user_name;
-	std::cout << "!" << std::endl;
 
 	// Get the last high score
 	std::cout << "Enter your high score:" << std::endl;
@@ -22,10 +30,8 @@ int main() {
 		std::cout << "Bad value!" << std::endl;
 		return -1;
 	}
-	const std::string high_scores_filename = "high_scores.txt"; // name of file, where scores are written
+	const std::string high_scores_filename = "../high_scores.txt"; // name of file, where scores are written
 	
-	// std::cout << "!" << std::endl;
-
 	// Write new high score to the records table
 	{
 		// We should open the output file in the append mode - we don't want
@@ -37,7 +43,7 @@ int main() {
 		}
 
 		// Append new results to the table:
-		out_file << user_name << ' ' << guess_game() << std::endl;
+		out_file << user_name << ' ' << guess_game(max_value) << std::endl;
 	} // end of score here just to mark end of the logic block of code
 
 	// Read the high score file and print all results

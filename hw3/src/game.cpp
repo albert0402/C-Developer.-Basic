@@ -1,12 +1,12 @@
-#include "game.h"
-#include "random_value.h"
+#include "../include/game.h"
+#include "../include/random_value.h"
 
 #include <iostream>
 
-int guess_game() {
+int guess_game(int max_value) {
 	
-	const int target_value = get_random_value(); // get random number from function 'get_random_value'
-	
+	int target_value = get_random_value(max_value); // get random number from function 'get_random_value'
+		
 	int current_value = 0;
 	int count_attempt = 0; // counter of attempts
 	bool not_win = true;
