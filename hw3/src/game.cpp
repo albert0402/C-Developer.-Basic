@@ -12,7 +12,7 @@ int guess_game(int max_value) {
 	bool not_win = true;
 
 	std::cout << "Enter your guess:" << std::endl;
-
+	
 	do {
 		std::cin >> current_value;
 
