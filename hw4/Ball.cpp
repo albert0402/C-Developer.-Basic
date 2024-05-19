@@ -1,12 +1,21 @@
 #include "Ball.hpp"
 #include <cmath>
 
+Ball::Ball(Point center, Velocity velocity, double radius, Color color, bool collidable) {
+    _center = center;
+    _velocity = velocity;
+    _radius = radius;
+    _color = color;
+    _collidable = collidable;
+}
+
 /**
  * Задает скорость объекта
  * @param velocity новое значение скорости
  */
 void Ball::setVelocity(const Velocity& velocity) {
     // TODO: место для доработки
+    _velocity = velocity;
 }
 
 /**
@@ -14,7 +23,7 @@ void Ball::setVelocity(const Velocity& velocity) {
  */
 Velocity Ball::getVelocity() const {
     // TODO: место для доработки
-    return {};
+    return _velocity;
 }
 
 /**
@@ -27,6 +36,7 @@ Velocity Ball::getVelocity() const {
  */
 void Ball::draw(Painter& painter) const {
     // TODO: место для доработки
+    painter.draw(_center, _radius, _color);
 }
 
 /**
@@ -35,6 +45,7 @@ void Ball::draw(Painter& painter) const {
  */
 void Ball::setCenter(const Point& center) {
     // TODO: место для доработки
+    _center = center;
 }
 
 /**
@@ -42,7 +53,7 @@ void Ball::setCenter(const Point& center) {
  */
 Point Ball::getCenter() const {
     // TODO: место для доработки
-    return {};
+    return _center;
 }
 
 /**
@@ -52,7 +63,7 @@ Point Ball::getCenter() const {
  */
 double Ball::getRadius() const {
     // TODO: место для доработки
-    return {};
+    return _radius;
 }
 
 /**
@@ -64,5 +75,12 @@ double Ball::getRadius() const {
  */
 double Ball::getMass() const {
     // TODO: место для доработки
-    return {};
+/**
+ * @note ВОПРОС: корректно ли тут возвращать сразу выражением, чтобы поле массы не заводить или так не очень хорошо?    
+*/
+    return (3.14 * std::pow(_radius, 3) * 4. / 3.);
+}
+
+bool Ball::getCollidable() const {
+    return _collidable;    
 }
