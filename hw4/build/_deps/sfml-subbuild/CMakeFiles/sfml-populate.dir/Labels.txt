@@ -1,0 +1,14 @@
+# Target labels
+ sfml-populate
+# Source files and their labels
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test.rule
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/hw4/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update.rule

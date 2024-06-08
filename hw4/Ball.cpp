@@ -1,21 +1,13 @@
 #include "Ball.hpp"
 #include <cmath>
 
-Ball::Ball(Point center, Velocity velocity, double radius, Color color, bool collidable) {
-    _center = center;
-    _velocity = velocity;
-    _radius = radius;
-    _color = color;
-    _collidable = collidable;
-}
-
 /**
  * Задает скорость объекта
  * @param velocity новое значение скорости
  */
 void Ball::setVelocity(const Velocity& velocity) {
     // TODO: место для доработки
-    _velocity = velocity;
+    m_velocity = velocity;
 }
 
 /**
@@ -23,9 +15,13 @@ void Ball::setVelocity(const Velocity& velocity) {
  */
 Velocity Ball::getVelocity() const {
     // TODO: место для доработки
-    return _velocity;
+    return m_velocity;
 }
 
+
+void Ball::setColor(const Color& color) {
+    m_color = color;
+}
 /**
  * @brief Выполняет отрисовку объекта
  * @details объект Ball абстрагирован от конкретного
@@ -36,7 +32,7 @@ Velocity Ball::getVelocity() const {
  */
 void Ball::draw(Painter& painter) const {
     // TODO: место для доработки
-    painter.draw(_center, _radius, _color);
+    painter.draw(m_center, m_radius, m_color);
 }
 
 /**
@@ -45,7 +41,7 @@ void Ball::draw(Painter& painter) const {
  */
 void Ball::setCenter(const Point& center) {
     // TODO: место для доработки
-    _center = center;
+    m_center = center;
 }
 
 /**
@@ -53,7 +49,7 @@ void Ball::setCenter(const Point& center) {
  */
 Point Ball::getCenter() const {
     // TODO: место для доработки
-    return _center;
+    return m_center;
 }
 
 /**
@@ -63,7 +59,7 @@ Point Ball::getCenter() const {
  */
 double Ball::getRadius() const {
     // TODO: место для доработки
-    return _radius;
+    return m_radius;
 }
 
 /**
@@ -75,12 +71,5 @@ double Ball::getRadius() const {
  */
 double Ball::getMass() const {
     // TODO: место для доработки
-/**
- * @note ВОПРОС: корректно ли тут возвращать сразу выражением, чтобы поле массы не заводить или так не очень хорошо?    
-*/
-    return (3.14 * std::pow(_radius, 3) * 4. / 3.);
-}
-
-bool Ball::getCollidable() const {
-    return _collidable;    
+    return M_PI * pow(m_radius, 3.) * 4. / 3.;
 }
