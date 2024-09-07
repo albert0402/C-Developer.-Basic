@@ -31,13 +31,13 @@ public:
     Rotation(float psi, float theta, float gamma);
 
     // Метод для вычисления матрицы вращения вокруг оси psi (ось X)
-    void computeC_psi(float matrix[3][3]) const;
+    void computeC_psi();
 
     // Метод для вычисления матрицы вращения вокруг оси theta (ось Y)
-    void computeC_theta(float matrix[3][3]) const;
+    void computeC_theta();
 
     // Метод для вычисления матрицы вращения вокруг оси gamma (ось Z)
-    void computeC_gamma(float matrix[3][3]) const;
+    void computeC_gamma();
 
     // Метод для вывода матрицы вращения вокруг оси psi (ось X)
     void printC_psi() const;
