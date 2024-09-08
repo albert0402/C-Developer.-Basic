@@ -151,3 +151,21 @@ int main() {
 
     return 0;
 }
+
+
+float inverse[3][3];
+
+    try {
+        inverseMatrix3x3(matrix, inverse);
+
+        std::cout << "Inverse Matrix:" << std::endl;
+        for (int i = 0; i < 3; ++i) {
+            std::cout << "[ ";
+            for (int j = 0; j < 3; ++j) {
+                std::cout << inverse[i][j] << " ";
+            }
+            std::cout << "]" << std::endl;
+        }
+    } catch (const std::runtime_error& e) {
+        std::cerr << e.what() << std::endl;
+    }

@@ -7,22 +7,20 @@
 /************************************/
 
 // Методы для установки значений
+
 void Rotation::setPsi(float psi) {
     this->psi = psi;
-    computeC_psi(C_psi);  // Обновляем матрицу при изменении угла
-
+    computeC_psi();  // Обновляем матрицу при изменении угла
 }
 
 void Rotation::setTheta(float theta) {
     this->theta = theta;
-    computeC_theta(C_theta);  // Обновляем матрицу при изменении угла
-
+    computeC_theta();  // Обновляем матрицу при изменении угла
 }
 
 void Rotation::setGamma(float gamma) {
     this->gamma = gamma;
-    computeC_gamma(C_gamma);  // Обновляем матрицу при изменении угла
-
+    computeC_gamma();  // Обновляем матрицу при изменении угла
 }
 
 // Методы для получения значений
@@ -49,65 +47,55 @@ void Rotation::print() const {
 
 // Конструктор по умолчанию
 Rotation::Rotation() : psi(0.0f), theta(0.0f), gamma(0.0f) {
-    computeC_psi(C_psi);
-    computeC_theta(C_theta);
-    computeC_gamma(C_gamma);
+    computeC_psi();
+    computeC_theta();
+    computeC_gamma();
 }
 
 // Конструктор с параметрами
 Rotation::Rotation(float p, float t, float g) : psi(p), theta(t), gamma(g) {
-    computeC_psi(C_psi);
-    computeC_theta(C_theta);
-    computeC_gamma(C_gamma);
+    computeC_psi();
+    computeC_theta();
+    computeC_gamma();
 }
 
 // Метод для вычисления матрицы поворота по курсу (psi)
-void Rotation::computeC_psi(float matrix[3][3]) const {
-    matrix[0][0] = 1;
-    matrix[0][1] = 0;
-    matrix[0][2] = 0;
-    matrix[1][0] = 0;
-    matrix[1][1] = cos(psi);
-    matrix[1][2] = -sin(psi);
-    matrix[2][0] = 0;
-    matrix[2][1] = sin(psi);
-    matrix[2][2] = cos(psi);
-
-    // Сохраняем результат в член класса
-    std::copy(&matrix[0][0], &matrix[0][0] + 9, &C_psi[0][0]);
-    
+void Rotation::computeC_psi() {
+    C_psi[0][0] = 1;
+    C_psi[0][1] = 0;
+    C_psi[0][2] = 0;
+    C_psi[1][0] = 0;
+    C_psi[1][1] = cos(psi);
+    C_psi[1][2] = -sin(psi);
+    C_psi[2][0] = 0;
+    C_psi[2][1] = sin(psi);
+    C_psi[2][2] = cos(psi);
 }
 
 // Метод для вычисления матрицы поворота по тангажу (theta)
-void Rotation::computeC_theta(float matrix[3][3]) const {
-    matrix[0][0] = cos(theta);
-    matrix[0][1] = 0;
-    matrix[0][2] = sin(theta);
-    matrix[1][0] = 0;
-    matrix[1][1] = 1;
-    matrix[1][2] = 0;
-    matrix[2][0] = -sin(theta);
-    matrix[2][1] = 0;
-    matrix[2][2] = cos(theta);
-
-    // Сохраняем результат в член класса
-    std::copy(&matrix[0][0], &matrix[0][0] + 9, &C_theta[0][0]);
+void Rotation::computeC_theta() {
+    C_theta[0][0] = cos(theta);
+    C_theta[0][1] = 0;
+    C_theta[0][2] = sin(theta);
+    C_theta[1][0] = 0;
+    C_theta[1][1] = 1;
+    C_theta[1][2] = 0;
+    C_theta[2][0] = -sin(theta);
+    C_theta[2][1] = 0;
+    C_theta[2][2] = cos(theta);
 }
 
 // Метод для вычисления матрицы поворота по крену (gamma)
-void Rotation::computeC_gamma(float matrix[3][3]) const {
-    matrix[0][0] = cos(gamma);
-    matrix[0][1] = -sin(gamma);
-    matrix[0][2] = 0;
-    matrix[1][0] = sin(gamma);
-    matrix[1][1] = cos(gamma);
-    matrix[1][2] = 0;
-    matrix[2][0] = 0;
-    matrix[2][1] = 0;
-    matrix[2][2] = 1;
-
-    // Сохраняем результат в член класса
-    std::copy(&matrix[0][0], &matrix[0][0] + 9, &C_gamma[0][0]);
+void Rotation::computeC_gamma() {
+    C_gamma[0][0] = cos(gamma);
+    C_gamma[0][1] = -sin(gamma);
+    C_gamma[0][2] = 0;
+    C_gamma[1][0] = sin(gamma);
+    C_gamma[1][1] = cos(gamma);
+    C_gamma[1][2] = 0;
+    C_gamma[2][0] = 0;
+    C_gamma[2][1] = 0;
+    C_gamma[2][2] = 1;
 }
 
 // Метод для вывода матрицы поворота по курсу (psi)

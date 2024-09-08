@@ -1,4 +1,5 @@
 #include "../include/SateliteMatrix.h"
+#include "../include/Matrix.h"
 
 #include <iostream>
 #include <cmath> // Для функций sin и cos 
@@ -42,11 +43,7 @@ void SateliteMatrix::print() const {
 // Конструктор по умолчанию
 SateliteMatrix::SateliteMatrix() : phi(0.0f), lambda(0.0f) {
     // Инициализация матрицы нулями
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            matrix[i][j] = 0.0f;
-        }
-    }
+    initializeMatrix(matrix);
 }
 
 // Конструктор с параметрами
@@ -72,15 +69,9 @@ void SateliteMatrix::computeSateliteMatrix(){
 
 // Метод для вывода матрицы
 void SateliteMatrix::printSateliteMatrix() const {
-    std::cout << "Satelite transition matrix M_GSK_to_MSK):" << std::endl;
-    for (int i = 0; i < 3; ++i) {
-        std::cout << "[ ";
-        for (int j = 0; j < 3; ++j) {
-            std::cout << matrix[i][j] << " ";
-        }
-        std::cout << "]" << std::endl;
-    }
+    printMatrix(matrix, "Satelite transition matrix M_GSK_to_MSK):");
 }
+
 // Метод для получения матрицы
 const float (*SateliteMatrix::getSateliteMatrix() const)[3][3] {
     return &matrix;

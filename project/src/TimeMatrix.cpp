@@ -1,4 +1,5 @@
 #include "../include/TimeMatrix.h"
+#include "../include/Matrix.h"
 
 #include <iostream>
 #include <cmath>
@@ -30,11 +31,7 @@ void TimeMatrix::print() const {
 // Конструктор по умолчанию
 TimeMatrix::TimeMatrix() : s(0.0f) {
     // Инициализация матрицы нулями
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            matrix[i][j] = 0.0f;
-        }
-    }
+    initializeMatrix(matrix);
 }
 
 // Конструктор с параметрами
@@ -57,14 +54,8 @@ void TimeMatrix::computeTimeMatrix() {
 
 // Метод для вывода матрицы
 void TimeMatrix::printTimeMatrix() const {
-    std::cout << "Rotation matrix around M_ISK_to_GSK:" << std::endl;
-    for (int i = 0; i < 3; ++i) {
-        std::cout << "[ ";
-        for (int j = 0; j < 3; ++j) {
-            std::cout << matrix[i][j] << " ";
-        }
-        std::cout << "]" << std::endl;
-    }
+    printMatrix(matrix,  "Rotation matrix M_ISK_to_GSK:");
+
 }
 
 // Геттер для матрицы
