@@ -1,6 +1,10 @@
 #pragma once
 
-class SateliteMatrix {
+/************************************/
+/*  Матрица направляющих косинусов  */
+/************************************/
+
+class GeographyMatrix {
 public:
 
 /************************************/
@@ -23,19 +27,19 @@ public:
 /************************************/
 
     // Конструктор по умолчанию
-    SateliteMatrix();
+    GeographyMatrix();
 
     // Конструктор с параметрами
-    SateliteMatrix(float phi, float lambda);
+    GeographyMatrix(float phi, float lambda);
 
     // Метод для вычисления матрицы
-    void computeSateliteMatrix();
+    void computeGeographyMatrix();
 
     // Метод для вывода матрицы
-    void printSateliteMatrix() const;
+    void printGeographyMatrix() const;
 
     // Метод для получения матрицы
-    const float (*getSateliteMatrix() const)[3][3];
+    const float (*getGeographyMatrix() const)[3][3];
 
 /************************************/
 /*      Приватные члены класса      */

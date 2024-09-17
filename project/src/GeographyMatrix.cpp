@@ -1,4 +1,4 @@
-#include "../include/SateliteMatrix.h"
+#include "../include/GeographyMatrix.h"
 #include "../include/Matrix.h"
 
 #include <iostream>
@@ -10,28 +10,28 @@
 
 // Методы для установки значений
 
-void SateliteMatrix::setPhi(float phi) {
+void GeographyMatrix::setPhi(float phi) {
     this->phi = phi;
-    computeSateliteMatrix(); // Обновляем матрицу при изменении угла
+    computeGeographyMatrix(); // Обновляем матрицу при изменении угла
 }
 
-void SateliteMatrix::setLambda(float lambda) {
+void GeographyMatrix::setLambda(float lambda) {
     this->lambda = lambda;
-    computeSateliteMatrix(); // Обновляем матрицу при изменении угла
+    computeGeographyMatrix(); // Обновляем матрицу при изменении угла
 }
 
 // Методы для получения значений
 
-float SateliteMatrix::getPhi() const {
+float GeographyMatrix::getPhi() const {
     return phi;
 }
 
-float SateliteMatrix::getLambda() const {
+float GeographyMatrix::getLambda() const {
     return lambda;
 }
 
 // Метод для вывода значений на экран
-void SateliteMatrix::print() const {
+void GeographyMatrix::print() const {
     std::cout << "Phi: " << phi << std::endl;
     std::cout << "Lambda: " << lambda << std::endl;
 }
@@ -41,18 +41,18 @@ void SateliteMatrix::print() const {
 /************************************/
 
 // Конструктор по умолчанию
-SateliteMatrix::SateliteMatrix() : phi(0.0f), lambda(0.0f) {
+GeographyMatrix::GeographyMatrix() : phi(0.0f), lambda(0.0f) {
     // Инициализация матрицы нулями
     initializeMatrix(matrix);
 }
 
 // Конструктор с параметрами
-SateliteMatrix::SateliteMatrix(float phi, float lambda) : phi(phi), lambda(lambda)  {
-    computeSateliteMatrix(); // Инициализация матрицы сразу при создании объекта
+GeographyMatrix::GeographyMatrix(float phi, float lambda) : phi(phi), lambda(lambda)  {
+    computeGeographyMatrix(); // Инициализация матрицы сразу при создании объекта
 } 
 
 // Метод для вычисления матрицы перехода
-void SateliteMatrix::computeSateliteMatrix(){
+void GeographyMatrix::computeGeographyMatrix(){
     // Вычисление элементов матрицы
     matrix[0][0] = -sin(lambda);
     matrix[0][1] = cos(lambda);
@@ -68,11 +68,11 @@ void SateliteMatrix::computeSateliteMatrix(){
 } 
 
 // Метод для вывода матрицы
-void SateliteMatrix::printSateliteMatrix() const {
-    printMatrix(matrix, "Satelite transition matrix M_GSK_to_MSK):");
+void GeographyMatrix::printGeographyMatrix() const {
+    printMatrix(matrix, "Geography transition matrix M_GSK_to_MSK):");
 }
 
 // Метод для получения матрицы
-const float (*SateliteMatrix::getSateliteMatrix() const)[3][3] {
+const float (*GeographyMatrix::getGeographyMatrix() const)[3][3] {
     return &matrix;
 }
