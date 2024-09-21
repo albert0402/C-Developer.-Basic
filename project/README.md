@@ -4,12 +4,9 @@ $$
 $$
 
 $$
-\lambda = \arcsin  \frac \left {C_\psi \cdot M_{ГСК}^{МСК}} \right {C_\psi \cdot M_{ГСК}^{МСК}} 
+\lambda = \arcsin \left( \frac{ C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }{ C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} } \right)
 $$
 
-$$
-\lambda = \arcsin  \frac \left( {C_\psi \cdot M_{ГСК}^{МСК}} \right) {C_\psi \cdot M_{ГСК}^{МСК}} 
-$$
 
 
 # Описание программы для вычисления решения астроинерциального режима
