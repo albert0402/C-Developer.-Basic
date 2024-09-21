@@ -155,7 +155,7 @@ $$
 
 
 $$
-\lambda = \arctan \frac {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}} {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
+\lambda = \arctan \frac { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}} { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
 $$
 
 $$\psi = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{13}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{23}}$$
