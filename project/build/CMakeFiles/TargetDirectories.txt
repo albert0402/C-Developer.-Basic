@@ -1,0 +1,3 @@
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/project/build/CMakeFiles/main.dir
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/project/build/CMakeFiles/edit_cache.dir
+/Users/albertbolotnov/Desktop/otus/otus_C-Developer.Basic/project/build/CMakeFiles/rebuild_cache.dir
