@@ -15,10 +15,10 @@ public:
     void setS(float s);
 
     // Метод для получения значения угла
-    float getS() const;
+    float getS();
 
     // Метод для вывода значения угла на экран
-    void print() const;
+    void print();
 
 /************************************/
 /*          Работа с матрицей       */
@@ -34,10 +34,10 @@ public:
     void computeTimeMatrix();
 
     // Метод для вывода матрицы
-    void printTimeMatrix() const;
+    void printTimeMatrix();
 
     // Геттер для матрицы
-    const float (*getTimeMatrix() const)[3][3];
+    float (*getTimeMatrix())[3][3];
 
 private:
     float s;        // Угол s

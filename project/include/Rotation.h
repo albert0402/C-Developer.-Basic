@@ -17,12 +17,12 @@ public:
     void setGamma(float gamma);
 
     // Методы для получения значений
-    float getPsi() const;
-    float getTheta() const;
-    float getGamma() const;
+    float getPsi();
+    float getTheta();
+    float getGamma();
 
     // Метод для вывода значений на экран
-    void print() const;
+    void print();
 
 /************************************/
 /*          Работа с матрицей       */
@@ -44,22 +44,22 @@ public:
     void computeC_gamma();
 
     // Метод для вывода матрицы вращения вокруг оси psi (ось X)
-    void printC_psi() const;
+    void printC_psi();
 
     // Метод для вывода матрицы вращения вокруг оси theta (ось Y)
-    void printC_theta() const;
+    void printC_theta();
 
     // Метод для вывода матрицы вращения вокруг оси gamma (ось Z)
-    void printC_gamma() const;
+    void printC_gamma();
 
     // Метод для получения матрицы вращения вокруг оси psi (ось X)
-    const float (*getC_psi() const)[3][3];
+    float (*getC_psi())[3][3];
 
     // Метод для получения матрицы вращения вокруг оси theta (ось Y)
-    const float (*getC_theta() const)[3][3];
+    float (*getC_theta())[3][3];
 
     // Метод для получения матрицы вращения вокруг оси gamma (ось Z)
-    const float (*getC_gamma() const)[3][3];
+    float (*getC_gamma())[3][3];
 
 /************************************/
 /*      Приватные члены класса      */

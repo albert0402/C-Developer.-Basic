@@ -1,25 +1,23 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
+project(final_project)
 
-project(03.homework)
+set(CMAKE_CXX_STANDARD 17)
+
 
 add_executable(
-	main_calculation
+	main
 
-	main_calculation.cpp
-	src/calculate_coordinate_yaw.cpp
-	src/conjugate.cpp
-	src/star_time.cpp
-	src/astro.cpp
-	src/bins.cpp
-	src/read.cpp
-	src/write.cpp
+	main.cpp
 
-	include/calculate_coordinate_yaw.h
-	include/conjugate.h
-	include/star_time.h
-	include/astro.h
-	include/bins.h
-	include/read.h
-	include/write.h
+	calculations/getAstroInertialModeResultMatrix.cpp
+	calculations/getCoorectionModeResultMatrix.cpp
+	calculations/getResult.cpp
+
+	src/AstroMatrix.cpp
+	src/ConjugateMatrix.cpp
+	src/GeographyMatrix.cpp
+	src/Matrix.cpp
+	src/Rotation.cpp
+	src/TimeMatrix.cpp
 )
 

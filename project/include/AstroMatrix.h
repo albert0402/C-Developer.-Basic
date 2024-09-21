@@ -17,12 +17,12 @@ public:
     void setAzimut(float azimut);
 
     // Методы для получения значений
-    float getAlpha() const;
-    float getDelta() const;
-    float getAzimut() const;
+    float getAlpha();
+    float getDelta();
+    float getAzimut();
 
     // Метод для вывода значений на экран
-    void print() const;
+    void print();
 
 /************************************/
 /*          Работа с матрицей       */
@@ -38,10 +38,10 @@ public:
     void computeAstroMatrix();
 
     // Метод для вывода матрицы
-    void printAstroMatrix() const;
+    void printAstroMatrix();
 
     // Метод для получения матрицы
-    const float (*getAstroMatrix() const)[3][3];
+    float (*getAstroMatrix())[3][3];
 
 /************************************/
 /*      Приватные члены класса      */

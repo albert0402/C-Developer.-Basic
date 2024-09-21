@@ -29,20 +29,20 @@ void AstroMatrix::setAzimut(float azimut) {
 }
 
 // Методы для получения значений
-float AstroMatrix::getAlpha() const {
+float AstroMatrix::getAlpha(){
     return alpha;
 }
 
-float AstroMatrix::getDelta() const {
+float AstroMatrix::getDelta(){
     return delta;
 }
 
-float AstroMatrix::getAzimut() const {
+float AstroMatrix::getAzimut(){
     return azimut;
 }
 
 // Метод для вывода значений на экран
-void AstroMatrix::print() const {
+void AstroMatrix::print(){
     std::cout << "Alpha: " << alpha << std::endl;
     std::cout << "Delta: " << delta << std::endl;
     std::cout << "Azimut: " << azimut << std::endl;
@@ -80,11 +80,11 @@ void AstroMatrix::computeAstroMatrix() {
 }
 
 // Метод для вывода матрицы
-void AstroMatrix::printAstroMatrix() const {
+void AstroMatrix::printAstroMatrix(){
     printMatrix(matrix, "Transition matrix M_ISK_to_ZPSK:");
 }
 
 // Метод для получения матрицы
-const float (*AstroMatrix::getAstroMatrix() const)[3][3] {
+float (*AstroMatrix::getAstroMatrix())[3][3] {
     return &matrix;
 }

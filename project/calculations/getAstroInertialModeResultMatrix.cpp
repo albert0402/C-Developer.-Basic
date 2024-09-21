@@ -24,10 +24,12 @@
 - гринвичское время s.
 */
 
-const float (&astro_inertial_mode(float theta, float roll,
-                                  float alpha_1, float alpha_2, float alpha_3,
-                                  float alpha, float delta, float azimut,
-                                  float s))[3][3] {
+float astro_inertial_mode(
+                            float theta, float roll,
+                            float alpha_1, float alpha_2, float alpha_3,
+                            float alpha, float delta, float azimut,
+                            float s,
+                            float (&AstroInertialModeResult)[3][3]){
     
     // Создаем объекты классов
     Rotation rotation(0.0f, theta, roll);
@@ -43,11 +45,11 @@ const float (&astro_inertial_mode(float theta, float roll,
     time.computeTimeMatrix();
 
     // Получаем указатели на матрицы
-    const float (*C_theta)[3][3] = rotation.getC_theta();
-    const float (*C_gamma)[3][3] = rotation.getC_gamma();
-    const float (*ConjugateMatrix)[3][3] = conjugate.getConjugateMatrix();
-    const float (*AstroMatrix)[3][3] = astro.getAstroMatrix();
-    const float (*TimeMatrix)[3][3] = time.getTimeMatrix();
+    float (*C_theta)[3][3] = rotation.getC_theta();
+    float (*C_gamma)[3][3] = rotation.getC_gamma();
+    float (*ConjugateMatrix)[3][3] = conjugate.getConjugateMatrix();
+    float (*AstroMatrix)[3][3] = astro.getAstroMatrix();
+    float (*TimeMatrix)[3][3] = time.getTimeMatrix();
 
     // Обратные матрицы
     float invC_theta[3][3];
@@ -57,27 +59,19 @@ const float (&astro_inertial_mode(float theta, float roll,
 
     if (!inverseMatrix(*C_theta, invC_theta)) {
         std::cout << "Failed to invert matrix C_theta." << std::endl;
-        return;
     }
 
     if (!inverseMatrix(*C_gamma, invC_gamma)) {
         std::cout << "Failed to invert matrix C_gamma." << std::endl;
-        return;
     }
     
     if (!inverseMatrix(*ConjugateMatrix, invConjugateMatrix)) {
         std::cout << "Failed to invert matrix ConjugateMatrix." << std::endl;
-        return;
     }
 
     if (!inverseMatrix(*TimeMatrix, invTimeMatrix)) {
         std::cout << "Failed to invert matrix TimeMatrix." << std::endl;
-        return;
     }
-
-
-    // Переменная для результата
-    float AstroInertialModeResult[3][3];
 
     // Временная переменная для хранения результата
     float temp[3][3];
@@ -91,5 +85,5 @@ const float (&astro_inertial_mode(float theta, float roll,
     // Выводим результат
     printMatrix(AstroInertialModeResult, "Transition matrix M_APSK_to_ZPSK:");
 
-    return AstroInertialModeResult;
+    return AstroInertialModeResult[3][3];
 }

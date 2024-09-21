@@ -24,20 +24,20 @@ void Rotation::setGamma(float gamma) {
 }
 
 // Методы для получения значений
-float Rotation::getPsi() const {
+float Rotation::getPsi(){
     return psi;
 }
 
-float Rotation::getTheta() const {
+float Rotation::getTheta(){
     return theta;
 }
 
-float Rotation::getGamma() const {
+float Rotation::getGamma(){
     return gamma;
 }
 
 // Метод для вывода значений углов
-void Rotation::print() const {
+void Rotation::print(){
     std::cout << "Psi: " << psi << ", Theta: " << theta << ", Gamma: " << gamma << std::endl;    
 }
 
@@ -99,7 +99,7 @@ void Rotation::computeC_gamma() {
 }
 
 // Метод для вывода матрицы поворота по курсу (psi)
-void Rotation::printC_psi() const {
+void Rotation::printC_psi(){
     std::cout << "Rotation matrix around psi-axis (X):" << std::endl;
     for (int i = 0; i < 3; ++i) {
         std::cout << "[ ";
@@ -111,7 +111,7 @@ void Rotation::printC_psi() const {
 }
 
 // Метод для вывода матрицы поворота по тангажу (theta)
-void Rotation::printC_theta() const {
+void Rotation::printC_theta(){
     std::cout << "Rotation matrix around theta-axis (Y):" << std::endl;
     for (int i = 0; i < 3; ++i) {
         std::cout << "[ ";
@@ -123,7 +123,7 @@ void Rotation::printC_theta() const {
 }
 
 // Метод для вывода матрицы поворота по крену (gamma)
-void Rotation::printC_gamma() const {
+void Rotation::printC_gamma(){
     std::cout << "Rotation matrix around gamma-axis (Z):" << std::endl;
     for (int i = 0; i < 3; ++i) {
         std::cout << "[ ";
@@ -135,16 +135,16 @@ void Rotation::printC_gamma() const {
 }
 
 // Метод для получения матрицы поворота по курсу (psi)
-const float (*Rotation::getC_psi() const)[3][3] {
+float (*Rotation::getC_psi())[3][3] {
     return &C_psi;
 }
 
 // Метод для получения матрицы поворота по тангажу (theta)
-const float (*Rotation::getC_theta() const)[3][3] {
+float (*Rotation::getC_theta())[3][3] {
     return &C_theta;
 }
 
 // Метод для получения матрицы поворота по крену (gamma)
-const float (*Rotation::getC_gamma() const)[3][3] {
+float (*Rotation::getC_gamma())[3][3] {
     return &C_gamma;
 }

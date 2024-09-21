@@ -16,11 +16,11 @@ public:
     void setLambda(float lambda);
 
     // Методы для получения значений
-    float getPhi() const;
-    float getLambda() const;
+    float getPhi();
+    float getLambda();
 
     // Метод для вывода значений на экран
-    void print() const;
+    void print();
 
 /************************************/
 /*          Работа с матрицей       */
@@ -36,10 +36,10 @@ public:
     void computeGeographyMatrix();
 
     // Метод для вывода матрицы
-    void printGeographyMatrix() const;
+    void printGeographyMatrix();
 
     // Метод для получения матрицы
-    const float (*getGeographyMatrix() const)[3][3];
+    float (*getGeographyMatrix())[3][3];
 
 /************************************/
 /*      Приватные члены класса      */

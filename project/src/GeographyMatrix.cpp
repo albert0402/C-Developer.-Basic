@@ -22,16 +22,16 @@ void GeographyMatrix::setLambda(float lambda) {
 
 // Методы для получения значений
 
-float GeographyMatrix::getPhi() const {
+float GeographyMatrix::getPhi(){
     return phi;
 }
 
-float GeographyMatrix::getLambda() const {
+float GeographyMatrix::getLambda(){
     return lambda;
 }
 
 // Метод для вывода значений на экран
-void GeographyMatrix::print() const {
+void GeographyMatrix::print(){
     std::cout << "Phi: " << phi << std::endl;
     std::cout << "Lambda: " << lambda << std::endl;
 }
@@ -68,11 +68,11 @@ void GeographyMatrix::computeGeographyMatrix(){
 } 
 
 // Метод для вывода матрицы
-void GeographyMatrix::printGeographyMatrix() const {
+void GeographyMatrix::printGeographyMatrix(){
     printMatrix(matrix, "Geography transition matrix M_GSK_to_MSK):");
 }
 
 // Метод для получения матрицы
-const float (*GeographyMatrix::getGeographyMatrix() const)[3][3] {
+float (*GeographyMatrix::getGeographyMatrix())[3][3] {
     return &matrix;
 }

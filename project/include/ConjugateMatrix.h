@@ -17,12 +17,12 @@ public:
     void setAlpha3(float alpha3);
 
     // Методы для получения значений
-    float getAlpha1() const;
-    float getAlpha2() const;
-    float getAlpha3() const;
+    float getAlpha1();
+    float getAlpha2();
+    float getAlpha3();
 
     // Метод для вывода значений на экран
-    void print() const;
+    void print();
 
 /************************************/
 /*          Работа с матрицей       */
@@ -38,10 +38,10 @@ public:
     void computeConjugateMatrix();
 
     // Метод для вывода матрицы
-    void printConjugateMatrix() const;
+    void printConjugateMatrix();
 
     // Геттер для матрицы
-    const float (*getConjugateMatrix() const)[3][3];
+    float (*getConjugateMatrix())[3][3];
 
 private:
     float alpha1;  // Угол alpha1

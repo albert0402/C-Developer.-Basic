@@ -15,14 +15,14 @@ void initializeMatrix(float matrix[3][3]) {
 }
 
 // Функция для вычисления детерминанта матрицы
-float determinantMatrix(const float matrix[3][3]) {
+float determinantMatrix(float matrix[3][3]) {
     return matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[2][1] * matrix[1][2]) -
            matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]) +
            matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]);
 }
 
 // Функция для вычисления обратной матрицы
-bool inverseMatrix(const float matrix[3][3], float result[3][3]) {
+bool inverseMatrix(float matrix[3][3], float result[3][3]) {
     float det = determinantMatrix(matrix);
 
     if (det == 0) {
@@ -48,7 +48,7 @@ bool inverseMatrix(const float matrix[3][3], float result[3][3]) {
 }
 
 // Функция для перемножения двух матриц
-void multiplyMatrix(const float matrixA[3][3], const float matrixB[3][3], float result[3][3]) {
+void multiplyMatrix(float matrixA[3][3], float matrixB[3][3], float result[3][3]) {
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             result[i][j] = 0.0f;
@@ -60,7 +60,7 @@ void multiplyMatrix(const float matrixA[3][3], const float matrixB[3][3], float 
 }
 
 //  Функции для вывода матрицы
-void printMatrix(const float matrix[3][3], const std::string& title) {
+void printMatrix(float matrix[3][3], const std::string& title) {
     std::cout << title << ":" << std::endl;
     for (int i = 0; i < 3; ++i) {
         std::cout << "[ ";

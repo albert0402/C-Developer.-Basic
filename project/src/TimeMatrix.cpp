@@ -15,12 +15,12 @@ void TimeMatrix::setS(float s) {
 }
 
 // Метод для получения значения угла
-float TimeMatrix::getS() const {
+float TimeMatrix::getS(){
     return s;
 }
 
 // Метод для вывода значения угла на экран
-void TimeMatrix::print() const {
+void TimeMatrix::print(){
     std::cout << "S: " << s << std::endl;
 }
 
@@ -53,12 +53,12 @@ void TimeMatrix::computeTimeMatrix() {
 }
 
 // Метод для вывода матрицы
-void TimeMatrix::printTimeMatrix() const {
+void TimeMatrix::printTimeMatrix(){
     printMatrix(matrix,  "Rotation matrix M_ISK_to_GSK:");
 
 }
 
 // Геттер для матрицы
-const float (*TimeMatrix::getTimeMatrix() const)[3][3] {
+float (*TimeMatrix::getTimeMatrix())[3][3] {
     return &matrix;
 }

@@ -25,20 +25,20 @@ void ConjugateMatrix::setAlpha3(float alpha3) {
 }
 
 // Методы для получения значений углов
-float ConjugateMatrix::getAlpha1() const {
+float ConjugateMatrix::getAlpha1(){
     return alpha1;
 }
 
-float ConjugateMatrix::getAlpha2() const {
+float ConjugateMatrix::getAlpha2(){
     return alpha2;
 }
 
-float ConjugateMatrix::getAlpha3() const {
+float ConjugateMatrix::getAlpha3(){
     return alpha3;
 }
 
 // Метод для вывода значений углов
-void ConjugateMatrix::print() const {
+void ConjugateMatrix::print(){
     std::cout << "Alpha1: " << alpha1 << std::endl;
     std::cout << "Alpha2: " << alpha2 << std::endl;
     std::cout << "Alpha3: " << alpha3 << std::endl;
@@ -75,11 +75,11 @@ void ConjugateMatrix::computeConjugateMatrix() {
 }
 
 // Метод для вывода матрицы
-void ConjugateMatrix::printConjugateMatrix() const {
+void ConjugateMatrix::printConjugateMatrix(){
     printMatrix(matrix, "Transition matrix M_APSK_to_ZPSK:");
 }
 
 // Геттер для матрицы
-const float (*ConjugateMatrix::getConjugateMatrix() const)[3][3] {
+float (*ConjugateMatrix::getConjugateMatrix())[3][3] {
     return &matrix;
 }
