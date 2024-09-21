@@ -4,21 +4,23 @@
 
 ## Основная логика программы:
 
+Когда $D > 0$, уравнение $(ax^2 + bx + c = 0)$ имеет два корня, которые можно найти следующим образом:
+$$ x_{1}, x_{2} = {-b \pm \sqrt{D} \over 2a} $$
+$$ D = b^2 - 4ac$$
 
+Матрицу $M_{МСК}^{АПСК}$ можно определить перемножением МНК по углам крена $\C_\gamma$ , тангажа $\C_\vartheta$ и курса $\C_\psi$:
 
-Матрицу M_{МСК}^{АПСК} можно определить перемножением МНК по углам крена \C_\gamma , тангажа \C_\vartheta и курса \C_\psi:
-
-\M_{МСК}^{АПСК} = \C_\gamma \cdot \C_\vartheta \cdot \C_\psi \tag{8}
+$$ M_{МСК}^{АПСК} = \C_\gamma \cdot \C_\vartheta \cdot \C_\psi \$$
 
 
 где:
 
 
-\C_\gamma = \begin{pmatrix}
+$C_\gamma = \begin{pmatrix}
 \cos \gamma \; 0 \; -\sin \gamma \\\
 0 & 1 & 0 \\\
 \sin \gamma & 0 & \cos \gamma
-\end{pmatrix}
+\end{pmatrix}$
 
 
 \[
