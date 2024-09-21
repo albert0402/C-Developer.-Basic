@@ -1,3 +1,24 @@
+$$
+{M_{ИСК}^{ГСК}} = 
+\begin{pmatrix}
+{M_{ИСК}^{ГСК}}_{11} & \sin S & 0 \\
+-\sin S & \cos S & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+$$
+
+$$
+\arcsin \left (\frac{C_\psi \cdot M_{ГСК}^{МСК}}{C_\psi \cdot M_{ГСК}^{МСК}} \right)
+$$
+
+$$
+\lambda = \arctan \frac { {\left( 1 \right)}_{32}} { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
+$$
+
+$$
+\lambda = \arctan \frac { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}} { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
+$$
+
 # Описание программы для вычисления решения астроинерциального режима
 
 Программа представляет собой консольное приложение на C++, которое вычисляет навигационные матрицы на основе введенных пользователем параметров. Она использует два режима: **astro_inertial** (астроинерциальный режим) и **correction** (коррекционный режим). В зависимости от выбранного режима, программа запрашивает у пользователя соответствующие параметры, проводит вычисления и выводит результаты.
@@ -98,15 +119,15 @@ M_{31}^{ИСК\to ЗПСК} & M_{32}^{ИСК\to ЗПСК} & M_{33}^{ИСК\to З
 $$
 
 где:
-- $$ {M_{ИСК}^{ЗПСК}}_{11} = - \cos Az \cdot \sin \alpha - \sin Az \cdot \cos \alpha \cdot \sin \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{12} = \cos Az \cdot \cos \alpha - \sin Az \cdot \sin \alpha \cdot \sin \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{13} = \sin Az \cdot \cos \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{21} = \sin Az \cdot \sin \alpha - \cos Az \cdot \cos \alpha \cdot \sin \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{22} = - \sin Az \cdot \cos \alpha - \cos Az \cdot \sin \alpha \cdot \sin \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{23} = \cos Az \cdot \cos \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{31} = \cos \alpha \cdot \cos \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{32} = \sin \alpha \cdot \cos \delta $$
-- $$ {M_{ИСК}^{ЗПСК}}_{33} = \sin \delta $$
+- $${M_{ИСК}^{ЗПСК}}_{11} = - \cos Az \cdot \sin \alpha - \sin Az \cdot \cos \alpha \cdot \sin \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{12} = \cos Az \cdot \cos \alpha - \sin Az \cdot \sin \alpha \cdot \sin \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{13} = \sin Az \cdot \cos \delta $$
+- $${M_{ИСК}^{ЗПСК}}_{21} = \sin Az \cdot \sin \alpha - \cos Az \cdot \cos \alpha \cdot \sin \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{22} = - \sin Az \cdot \cos \alpha - \cos Az \cdot \sin \alpha \cdot \sin \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{23} = \cos Az \cdot \cos \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{31} = \cos \alpha \cdot \cos \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{32} = \sin \alpha \cdot \cos \delta$$
+- $${M_{ИСК}^{ЗПСК}}_{33} = \sin \delta$$
 
 #### Параметры:
 - $\alpha$ — угол прямого восхождения;
