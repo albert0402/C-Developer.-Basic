@@ -1,10 +1,11 @@
 $$
-\lambda = \arctan \frac{\left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{32}}{\left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{31}}
+\lambda = \arctan \left( \frac{ \left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{32} }{ \left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{31} } \right)
 $$
 
 $$
-\psi = \arctan \frac{\left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{13}}{\left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{23}}
+\psi = \arctan \left( \frac{ \left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{13} }{ \left( C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{23} } \right)
 $$
+
 
 # Описание программы для вычисления решения астроинерциального режима
 
