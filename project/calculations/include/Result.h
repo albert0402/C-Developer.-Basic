@@ -23,4 +23,4 @@ struct NavigationData {
 };
 
 // Общая функция для вычисления широты, долготы и курса
-NavigationData computeNavigationData(const float (&matrix)[3][3]);
+NavigationData computeNavigationData(float (&matrix)[3][3]);

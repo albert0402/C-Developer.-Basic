@@ -13,6 +13,8 @@ add_executable(
 	calculations/src/AstroInertialModeResultMatrix.cpp
 	calculations/src/CoorectionModeResultMatrix.cpp
 	calculations/src/Result.cpp
+	calculations/src/Service.cpp
+
 
 	matrixs/src/AstroMatrix.cpp
 	matrixs/src/ConjugateMatrix.cpp

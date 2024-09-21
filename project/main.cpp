@@ -6,24 +6,32 @@
 #include "calculations/include/Result.h"
 #include "calculations/include/AstroInertialModeResultMatrix.h"
 #include "calculations/include/CoorectionModeResultMatrix.h"
+#include "calculations/include/Service.h"
 
-// Функция для чтения float значений с консоли
-void readParameter(const std::string& paramName, float& param) {
-    std::cout << "Enter " << paramName << " (in degrees): ";
-    std::cin >> param;
-}
+// // Функция для преобразования градусов в радианы
+// float DegreesToRadians(float degrees) {
+//     return degrees * M_PI / 180.0f;
+// }
 
-// Функция для преобразования градусов в радианы
-float degreesToRadians(float degrees) {
-    return degrees * M_PI / 180.0f;
-}
+// // Функция для преобразования градусов в радианы
+// float RadiansToDegrees(float radians) {
+//     return radians *  180.0f/ M_PI;
+// }
+
+// // Функция для чтения float значений с консоли
+// void readParameter(const std::string& paramName, float& param) {
+//     std::cout << "Enter " << paramName << " (in degrees): ";
+//     std::cin >> param;
+// }
 
 int main() {
+
+	// Настройка режима работы программы
     std::string mode;
-    std::cout << "Enter mode (astro or correction): ";
+    std::cout << "Enter mode. Please enter either 'astro_inertial' or 'correction': ";
     std::cin >> mode;
 
-    if (mode == "astro") {
+    if (mode == "astro_inertial") {
         // Параметры для astro_inertial_mode (в градусах)
         float theta, roll, alpha_1, alpha_2, alpha_3, alpha, delta, azimut, s;
 
@@ -39,14 +47,15 @@ int main() {
         readParameter("s", s);
 
         // Переводим параметры из градусов в радианы
-        theta = degreesToRadians(theta);
-        roll = degreesToRadians(roll);
-        alpha_1 = degreesToRadians(alpha_1);
-        alpha_2 = degreesToRadians(alpha_2);
-        alpha_3 = degreesToRadians(alpha_3);
-        alpha = degreesToRadians(alpha);
-        delta = degreesToRadians(delta);
-        azimut = degreesToRadians(azimut);
+        theta = DegreesToRadians(theta);
+        roll = DegreesToRadians(roll);
+        alpha_1 = DegreesToRadians(alpha_1);
+        alpha_2 = DegreesToRadians(alpha_2);
+        alpha_3 = DegreesToRadians(alpha_3);
+        alpha = DegreesToRadians(alpha);
+        delta = DegreesToRadians(delta);
+        azimut = DegreesToRadians(azimut);
+		s = DegreesToRadians(s);
 
 	    // Вычисляем AstroinertialMatrix при помощи astro_inertial_mode
         float AstroinertialMatrix[3][3];
@@ -75,9 +84,9 @@ int main() {
         readParameter("phi", phi);
 
         // Переводим параметры из градусов в радианы
-        psi = degreesToRadians(psi);
-        lambda = degreesToRadians(lambda);
-        phi = degreesToRadians(phi);
+        psi = DegreesToRadians(psi);
+        lambda = DegreesToRadians(lambda);
+        phi = DegreesToRadians(phi);
 
         // Вычисляем correctionMatrix при помощи correction_mode
 		float СorrectionMatrix[3][3];
@@ -91,7 +100,7 @@ int main() {
         navData.print();
     } 
     else {
-        std::cerr << "Invalid mode. Please enter either 'astro' or 'correction'." << std::endl;
+        std::cerr << "Invalid mode. Please enter either 'astro_inertial' or 'correction'." << std::endl;
     }
 
     return 0;

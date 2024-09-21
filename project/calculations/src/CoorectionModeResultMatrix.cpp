@@ -23,7 +23,7 @@ void correction_mode(
     float (*C_psi)[3][3] = rotation.getC_psi();
     float (*GeographyMatrix)[3][3] = geography.getGeographyMatrix();
 
-    // Перемножаем матрицы C_psi и GeographyMatrix
+    // Получение матрицы CoorectionModeResult путем перемножение матрицы C_psi и матрицы GeographyMatrix
     multiplyMatrix(*C_psi, *GeographyMatrix, CoorectionModeResult);
 
     // Вывод результата
