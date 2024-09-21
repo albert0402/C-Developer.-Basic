@@ -221,7 +221,7 @@ $$
 
 ### Входные данные в режиме astro_inertial_mode:
 ```
-Enter mode (astro or correction): astro_inertial_mode
+Enter mode. Please enter either 'astro_inertial' or 'correction':
 Enter theta (in degrees): ___
 Enter roll (in degrees): ___
 Enter alpha_1 (in degrees): ___
@@ -243,7 +243,7 @@ Longitude (λ): ___ degrees
 
 ### Входные данные в режиме correction:
 ```
-Enter mode (astro or correction): correction
+Enter mode. Please enter either 'astro_inertial' or 'correction': 
 Enter psi (in degrees): ___
 Enter lambda (in degrees): ___
 Enter phi (in degrees): ___
