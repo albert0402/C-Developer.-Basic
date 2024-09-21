@@ -1,9 +1,15 @@
+$$
+\lambda = \arctan \left( \frac 
+    { \left( C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{32}} 
+    { \left( C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} \right)_{31}} 
+\right)
+$$
 
 32 up
 
 $$
 \lambda = \arctan  \frac 
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right) _{32} }} 
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{32}} 
     {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}} 
 $$
 
