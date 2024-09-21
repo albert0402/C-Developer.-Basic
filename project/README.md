@@ -153,6 +153,18 @@ $$
 \arcsin \left (\frac{C_\psi \cdot M_{ГСК}^{МСК}}{C_\psi \cdot M_{ГСК}^{МСК}} \right)
 $$
 
+$$
+\phi = \arcsin \left( (C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{33} \right);
+$$
+
+$$
+\lambda = \arctan \left( \frac{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{32}}{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{31}} \right);
+$$
+
+$$
+\psi = \arctan \left( \frac{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{13}}{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{23}} \right).
+$$
+
 
 $$
 \lambda = \arctan \frac { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}} { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
