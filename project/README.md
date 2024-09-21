@@ -6,17 +6,17 @@
 
 
 
-Матрицу M_{МСК}^{АПСК} можно определить перемножением МНК по углам крена C_\gamma , тангажа C_\vartheta и курса C_\psi:
+Матрицу M_{МСК}^{АПСК} можно определить перемножением МНК по углам крена \C_\gamma , тангажа \C_\vartheta и курса \C_\psi:
 
-M_{МСК}^{АПСК} = C_\gamma \cdot C_\vartheta \cdot C_\psi \tag{8}
+\M_{МСК}^{АПСК} = \C_\gamma \cdot \C_\vartheta \cdot \C_\psi \tag{8}
 
 
 где:
 
 
-C_\gamma = \begin{pmatrix}
-\cos \gamma & 0 & -\sin \gamma \\
-0 & 1 & 0 \\
+\C_\gamma = \begin{pmatrix}
+\cos \gamma \; 0 \; -\sin \gamma \\\
+0 & 1 & 0 \\\
 \sin \gamma & 0 & \cos \gamma
 \end{pmatrix}
 
