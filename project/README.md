@@ -68,10 +68,10 @@ M_{АПСК}^{ЗПСК_{31}} & M_{АПСК}^{ЗПСК_{32}} & M_{АПСК}^{ЗП
 $$
 
 где:
-- $$ M_{АПСК}^{ЗПСК_{11}} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 \$$
-- $$ M_{АПСК}^{ЗПСК_{12}} = \sin \alpha_1 \cdot \cos \alpha_2 \$$
-- $$ M_{АПСК}^{ЗПСК_{13}} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3 \$$
-- $$ M_{АПСК}^{ЗПСК_{21}} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 \$$
+- $$M_{АПСК}^{ЗПСК}_{11} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
+- $$M_{АПСК}^{ЗПСК}_{12} = \sin \alpha_1 \cdot \cos \alpha_2 \$$
+- $$M_{АПСК}^{ЗПСК}_{13} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
+- $$M_{АПСК}^{ЗПСК_{21}} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
 - $$M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2$$
 - $$M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
 - $$ M_{АПСК}^{ЗПСК_{31}} = \cos \alpha_2 \cdot \sin \alpha_3 $$
