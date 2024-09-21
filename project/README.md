@@ -50,9 +50,11 @@ $$
 C_\psi \cdot M_{ГСК}^{МСК} = (C_\vartheta)^{-1} \cdot (C_\gamma)^{-1} \cdot (M_{АПСК}^{ЗПСК})^{-1} \cdot M_{ИСК}^{ЗПСК} \cdot (M_{ИСК}^{ГСК})^{-1}
 $$
 
+## Режимы работы программы
+
 В левой части основного уравнения астронавигации осуществляется решение астроинерциальной задачи по вычислению навигационных параметров широта, долгота и курс (режим 1 - `astro_inertial`). 
 
-## Матрица $M_{АПСК}^{ЗПСК}$
+### Матрица $M_{АПСК}^{ЗПСК}$
 
 Матрица $M_{АПСК}^{ЗПСК}$ будет иметь вид:
 
@@ -66,12 +68,12 @@ M_{АПСК}^{ЗПСК_{31}} & M_{АПСК}^{ЗПСК_{32}} & M_{АПСК}^{ЗП
 $$
 
 где:
-- $$ M_{АПСК}^{ЗПСК_{11}} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
-- $$ M_{АПСК}^{ЗПСК_{12}} = \sin \alpha_1 \cdot \cos \alpha_2 $$
-- $$ M_{АПСК}^{ЗПСК_{13}} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3 $$
-- $$ M_{АПСК}^{ЗПСК_{21}} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
-- $$ M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2 $$
-- $$ M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3 $$
+- $$ M_{АПСК}^{ЗПСК_{11}} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 \$$
+- $$ M_{АПСК}^{ЗПСК_{12}} = \sin \alpha_1 \cdot \cos \alpha_2 \$$
+- $$ M_{АПСК}^{ЗПСК_{13}} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3 \$$
+- $$ M_{АПСК}^{ЗПСК_{21}} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 \$$
+- $$M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2$$
+- $$M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
 - $$ M_{АПСК}^{ЗПСК_{31}} = \cos \alpha_2 \cdot \sin \alpha_3 $$
 - $$ M_{АПСК}^{ЗПСК_{32}} = -\sin \alpha_2 $$
 - $$ M_{АПСК}^{ЗПСК_{33}} = \cos \alpha_2 \cdot \cos \alpha_3 $$
