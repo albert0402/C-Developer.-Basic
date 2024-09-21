@@ -1,8 +1,28 @@
 $$
-\lambda = \arcsin  \frac {\left(
+\lambda = \arcsin  \frac {
+    \left(
      { C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }
-     \right)}{\left( C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}}\right)} 
+     \right)
+     }
+     {
+        \left(
+             C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}}
+        \right)} 
 $$
+
+$$
+\lambda = \arcsin  \frac {
+    \left(
+     { C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }
+     \right)_{33}
+     }
+     {
+        \left(
+             C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}}
+        \right)_{33}} 
+$$
+
+
 
 $$
 \lambda = \arcsin  \frac {\left( { C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }\right)}{\left( C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}}\right)} 
