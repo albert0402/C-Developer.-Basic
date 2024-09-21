@@ -16,9 +16,9 @@ struct NavigationData {
     // Метод для вывода параметров навигации
     void print() const {
         std::cout << "Navigation Data:" << std::endl;
-        std::cout << "Latitude (φ): " << latitude << " radians" << std::endl;
-        std::cout << "Longitude (λ): " << longitude << " radians" << std::endl;
-        std::cout << "Yaw (ψ): " << yaw << " radians" << std::endl;
+        std::cout << "Latitude (φ): " << latitude << " degrees" << std::endl;
+        std::cout << "Longitude (λ): " << longitude << " degrees" << std::endl;
+        std::cout << "Longitude (λ): " << yaw << " degrees" << std::endl;
     }
 };
 

@@ -54,9 +54,13 @@ $$
 
 В левой части основного уравнения астронавигации осуществляется решение астроинерциальной задачи по вычислению навигационных параметров широта, долгота и курс (режим 1 - `astro_inertial`). 
 
-### Матрица $M_{АПСК}^{ЗПСК}$
+В правой часть основного уравнения астронавигации осуществляется коррекция выходных параметров АИНС по широте, долготе и курсу (режим 2 - `correction`). 
 
-Матрица $M_{АПСК}^{ЗПСК}$ будет иметь вид:
+Приведем основные выражения для матри, которые будут считаться внутри программы.
+
+### Матрица перехода от АПСК к ЗПСК
+
+Матрица $M_{АПСК}^{ЗПСК}$ имеет вид:
 
 $$
 M_{АПСК}^{ЗПСК} =
@@ -131,7 +135,7 @@ $$
 - $$S$$ — истинное гринвичское время на момент $$t$$.
 
 
-В правой часть основного уравнения астронавигации осуществляется коррекция выходных параметров АИНС по широте, долготе и курсу (режим 2 - `correction`). 
+### Матрица перехода от ГСК к МСК
 
 Элементы матрицы $M_{ГСК}^{МСК}$:
 
@@ -151,18 +155,16 @@ $$
 
 $$
 \lambda = \arctan  \frac 
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{32}}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}}
     {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}} 
 $$
 
-$$
-\lambda = \arctan  \frac 
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{13}} 
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{23}} 
-$$
+#### Параметры:
+- $\varphi$ — географическая широта ;
+- $\lambda$ — географическая долгота.
 
 
-### Логика выбора режима:
+## Выбора режима работы программы
 
 1. Программа запрашивает у пользователя режим работы: `astro_inertial` или `correction`.
 
@@ -217,24 +219,42 @@ $$
 
 ## Пример работы программы:
 
-### Входные данные:
+### Входные данные в режиме astro_inertial_mode:
 ```
-Enter mode (astro or correction): astro
-Enter theta (in degrees): 45
-Enter roll (in degrees): 30
-Enter alpha_1 (in degrees): 10
-Enter alpha_2 (in degrees): 20
-Enter alpha_3 (in degrees): 30
-Enter alpha (in degrees): 5
-Enter delta (in degrees): 60
-Enter azimut (in degrees): 90
-Enter s (in degrees): 1.0
+Enter mode (astro or correction): astro_inertial_mode
+Enter theta (in degrees): ___
+Enter roll (in degrees): ___
+Enter alpha_1 (in degrees): ___
+Enter alpha_2 (in degrees): ___
+Enter alpha_3 (in degrees): ___
+Enter alpha (in degrees): ___
+Enter delta (in degrees): ___
+Enter azimut (in degrees): ___
+Enter s (in degrees): ___
 ```
 
-### Вывод:
+### Вывод в режиме astro_inertial_mode:
 ```
 Navigation Data:
-... (данные вычисленного результата) ...
+Latitude (φ): ___ degrees
+Longitude (λ): ___ degrees
+Longitude (λ): ___ degrees
+```
+
+### Входные данные в режиме correction:
+```
+Enter mode (astro or correction): correction
+Enter psi (in degrees): ___
+Enter lambda (in degrees): ___
+Enter phi (in degrees): ___
+```
+
+### Вывод в режиме correction:
+```
+Navigation Data:
+Latitude (φ): ___ degrees
+Longitude (λ): ___ degrees
+Longitude (λ): ___ degrees
 ```
 
 ## Примечания:
