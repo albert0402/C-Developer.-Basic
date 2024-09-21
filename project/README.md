@@ -61,9 +61,9 @@ $$
 $$
 M_{АПСК}^{ЗПСК} =
 \begin{pmatrix*}
-{{M_{АПСК}^{ЗПСК}}_{11}} & {{M_{АПСК}^{ЗПСК}}_{21}} & {{M_{АПСК}^{ЗПСК}}_{13}} \\
-{{M_{АПСК}^{ЗПСК}}_{11}} & {{M_{АПСК}^{ЗПСК}}_{21}} & {{M_{АПСК}^{ЗПСК}}_{13}} \\
-{{M_{АПСК}^{ЗПСК}}_{11}} & {{M_{АПСК}^{ЗПСК}}_{21}} & {{M_{АПСК}^{ЗПСК}}_{13}}
+{M_{АПСК}^{ЗПСК}}_{11} & {M_{АПСК}^{ЗПСК}}_{21} & {M_{АПСК}^{ЗПСК}}_{13} \\
+{M_{АПСК}^{ЗПСК}}_{21} & {M_{АПСК}^{ЗПСК}}_{22} & {M_{АПСК}^{ЗПСК}}_{23} \\
+{M_{АПСК}^{ЗПСК}}_{31} & {M_{АПСК}^{ЗПСК}}_{23}& {M_{АПСК}^{ЗПСК}}_{33} 
 \end{pmatrix*}
 $$
 
@@ -91,22 +91,22 @@ $$
 $$
 M_{ИСК}^{ЗПСК}= 
 \begin{pmatrix}
-M_{11}^{ИСК\to ЗПСК} & M_{12}^{ИСК\to ЗПСК} & M_{13}^{ИСК\to ЗПСК} \\
+{M_{ИСК}^{ЗПСК}}_{11} & M_{12}^{ИСК\to ЗПСК} & M_{13}^{ИСК\to ЗПСК} \\
 M_{21}^{ИСК\to ЗПСК} & M_{22}^{ИСК\to ЗПСК} & M_{23}^{ИСК\to ЗПСК} \\
 M_{31}^{ИСК\to ЗПСК} & M_{32}^{ИСК\to ЗПСК} & M_{33}^{ИСК\to ЗПСК}
 \end{pmatrix}
 $$
 
 где:
-- $$ M_{11}^{ИСК\to ЗПСК} = - \cos Az \cdot \sin \alpha - \sin Az \cdot \cos \alpha \cdot \sin \delta $$
-- $$ M_{12}^{ИСК\to ЗПСК} = \cos Az \cdot \cos \alpha - \sin Az \cdot \sin \alpha \cdot \sin \delta $$
-- $$ M_{13}^{ИСК\to ЗПСК} = \sin Az \cdot \cos \delta $$
-- $$ M_{21}^{ИСК\to ЗПСК} = \sin Az \cdot \sin \alpha - \cos Az \cdot \cos \alpha \cdot \sin \delta $$
-- $$ M_{22}^{ИСК\to ЗПСК} = - \sin Az \cdot \cos \alpha - \cos Az \cdot \sin \alpha \cdot \sin \delta $$
-- $$ M_{23}^{ИСК\to ЗПСК} = \cos Az \cdot \cos \delta $$
-- $$ M_{31}^{ИСК\to ЗПСК} = \cos \alpha \cdot \cos \delta $$
-- $$ M_{32}^{ИСК\to ЗПСК} = \sin \alpha \cdot \cos \delta $$
-- $$ M_{33}^{ИСК\to ЗПСК} = \sin \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{11} = - \cos Az \cdot \sin \alpha - \sin Az \cdot \cos \alpha \cdot \sin \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{12} = \cos Az \cdot \cos \alpha - \sin Az \cdot \sin \alpha \cdot \sin \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{13} = \sin Az \cdot \cos \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{21} = \sin Az \cdot \sin \alpha - \cos Az \cdot \cos \alpha \cdot \sin \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{22} = - \sin Az \cdot \cos \alpha - \cos Az \cdot \sin \alpha \cdot \sin \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{23} = \cos Az \cdot \cos \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{31} = \cos \alpha \cdot \cos \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{32} = \sin \alpha \cdot \cos \delta $$
+- $$ {M_{ИСК}^{ЗПСК}}_{33} = \sin \delta $$
 
 #### Параметры:
 - $\alpha$ — угол прямого восхождения;
