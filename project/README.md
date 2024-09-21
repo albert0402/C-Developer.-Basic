@@ -60,23 +60,23 @@ $$
 
 $$
 M_{АПСК}^{ЗПСК} =
-\begin{pmatrix*}
-M_{АПСК}^{ЗПСК_{11}} & M_{АПСК}^{ЗПСК_{12}} & M_{АПСК}^{ЗПСК_{13}} \\
-M_{АПСК}^{ЗПСК_{21}} & M_{АПСК}^{ЗПСК_{22}} & M_{АПСК}^{ЗПСК_{23}} \\
-M_{АПСК}^{ЗПСК_{31}} & M_{АПСК}^{ЗПСК_{32}} & M_{АПСК}^{ЗПСК_{33}} 
+\begin{pmatrix*}{
+{M_{АПСК}^{ЗПСК}}_{11} & {M_{АПСК}^{ЗПСК}}_{21} & {M_{АПСК}^{ЗПСК}}_{13} \\
+{M_{АПСК}^{ЗПСК}}_{21} & {M_{АПСК}^{ЗПСК}}_{22} & {M_{АПСК}^{ЗПСК}}_{23} \\
+{M_{АПСК}^{ЗПСК}}_{31} & {M_{АПСК}^{ЗПСК}}_{23}& {M_{АПСК}^{ЗПСК}}_{33}} 
 \end{pmatrix*}
 $$
 
 где:
-- $$ M_{_{11}АПСК}^{ЗПСК} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
-- $$M_{АПСК}^{ЗПСК}_{12} = \sin \alpha_1 \cdot \cos \alpha_2$$
+- $${M_{АПСК}^{ЗПСК}}_{11} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
+- $${M_{АПСК}^{ЗПСК}}_{12} = \sin \alpha_1 \cdot \cos \alpha_2$$
 - $${M_{АПСК}^{ЗПСК}}_{13} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
-- $$M_{_{21}_АПСК}^{ЗПСК} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
-- $$M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2$$
-- $$M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
-- $$ M_{АПСК}^{ЗПСК_{31}} = \cos \alpha_2 \cdot \sin \alpha_3 $$
-- $$ M_{АПСК}^{ЗПСК_{32}} = -\sin \alpha_2 $$
-- $$ M_{АПСК}^{ЗПСК_{33}} = \cos \alpha_2 \cdot \cos \alpha_3 $$
+- $${M_{_АПСК}^{ЗПСК}}_{21} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
+- $${M_{АПСК}^{ЗПСК}}_{22} = \cos \alpha_1 \cdot \cos \alpha_2$$
+- $${M_{АПСК}^{ЗПСК}}_{23} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
+- $${M_{АПСК}^{ЗПСК}}_{31} = \cos \alpha_2 \cdot \sin \alpha_3 $$
+- $${M_{АПСК}^{ЗПСК}}_{32} = -\sin \alpha_2 $$
+- $${M_{АПСК}^{ЗПСК}}_{33} = \cos \alpha_2 \cdot \cos \alpha_3 $$
 
 #### Параметры:
 - $\alpha_1$ — угол сопряжения звездного датчика и ИНС относительно оси Y;
