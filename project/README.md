@@ -6,39 +6,37 @@
 
 Матрицу $M_{МСК}^{АПСК}$ можно определить перемножением МНК по углам крена $C_\gamma$ , тангажа $C_\vartheta$ и курса $C_\psi$:
 
-$$ M_{МСК}^{АПСК} = \C_\gamma \cdot \C_\vartheta \cdot \C_\psi \$$
-
+$$ M_{МСК}^{АПСК} = C_\gamma \cdot C_\vartheta \cdot C_\psi \$$
 
 где:
 
-
 $$ C_\gamma = \begin{pmatrix}
-\cos \gamma \; 0 \; -\sin \gamma \\\
+\cos \gamma & 0 & -\sin \gamma \\\
 0 & 1 & 0 \\\
 \sin \gamma & 0 & \cos \gamma
 \end{pmatrix}$$
 
 
-\[
+$$
 C_\vartheta = \begin{pmatrix}
 1 & 0 & 0 \\
 0 & \cos \vartheta & \sin \vartheta \\
 0 & -\sin \vartheta & \cos \vartheta
 \end{pmatrix}
-\]
+$$
 
-\[
+$$
 C_\psi = \begin{pmatrix}
 \cos \psi & -\sin \psi & 0 \\
 \sin \psi & \cos \psi & 0 \\
 0 & 0 & 1
 \end{pmatrix} \tag{9}
-\]
+$$
 
 #### Параметры:
-- \( \gamma\) — угол крена относительно оси Y;
-- \( \vartheta\) — угол тангажа относительно оси X;
-- \( \psi\) — угол курса относительно оси Z.
+- $\gamma$ — угол крена относительно оси Y;
+- $\vartheta$ — угол тангажа относительно оси X;
+- $ \psi$ — угол курса относительно оси Z.
 
 В астроинерциальном режиме осуществляется коррекция выходных параметров АИНС по широте, долготе и курсу, таким образом:
 
