@@ -34,11 +34,11 @@ C_\psi = \begin{pmatrix*}
 $$
 
 $$
-C_\psi = \begin{matrix*}
+C_\psi = \Bigg( \begin{matrix}
 \cos \psi & -\sin \psi & 0 \\
 \sin \psi & \cos \psi & 0 \\
 0 & 0 & 1
-\end{matrix*}
+\end{matrix} \Bigg)
 $$
 
 #### Параметры:
