@@ -4,7 +4,7 @@ $$
 $$
 
 $$
-\lambda = \arcsin  \frac \left( { C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }\right){ C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} } 
+\lambda = \arcsin  \frac {\left( { C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }\right)}{ C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} } 
 $$
 
 
