@@ -1,17 +1,19 @@
 $$
 \lambda = \arcsin  \frac 
-    {
-    \left( C_\psi \cdot M_{ГСК}^{МСК} \right)
-     }
-     {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}} 
+    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}} 
 $$
 
 $$
 \lambda = \arcsin  \frac 
-    {
-    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}
-     }
-     {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}} 
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{32}} 
+$$
+
+$$
+\lambda = \arcsin  \frac 
+    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{32}} 
 $$
 
 # Описание программы для вычисления решения астроинерциального режима
