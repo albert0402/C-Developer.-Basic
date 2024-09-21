@@ -155,7 +155,10 @@ $$
 
 $$\psi = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{13}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{23}}$$
 
-$$\frac{\frac{1}{x}+\frac{1}{y}}{y-z}$$
+$$\frac{C_\psi \cdot M_{ГСК}^{МСК}}_{13}{C_\psi \cdot M_{ГСК}^{МСК}}_{23}$$
+
+$$\frac{{C_\psi \cdot M_{ГСК}^{МСК}}_{13}}{{C_\psi \cdot M_{ГСК}^{МСК}}_{23}}$$
+
 
 ### Логика выбора режима:
 
