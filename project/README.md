@@ -10,19 +10,19 @@ $$ M_{МСК}^{АПСК} = C_\gamma \cdot C_\vartheta \cdot C_\psi \$$
 
 где:
 
-$$ C_\gamma = \begin{pmatrix}
+$$ C_\gamma = \begin{bmatrix}
 \cos \gamma & 0 & -\sin \gamma \\\
 0 & 1 & 0 \\\
 \sin \gamma & 0 & \cos \gamma
-\end{pmatrix}$$
+\end{bmatrix}$$
 
 
 $$
-C_\vartheta = \begin{pmatrix}
+C_\vartheta = \begin{vmatrix}
 1 & 0 & 0 \\
 0 & \cos \vartheta & \sin \vartheta \\
 0 & -\sin \vartheta & \cos \vartheta
-\end{pmatrix}
+\end{vmatrix}
 $$
 
 $$
@@ -30,13 +30,13 @@ C_\psi = \begin{pmatrix}
 \cos \psi & -\sin \psi & 0 \\
 \sin \psi & \cos \psi & 0 \\
 0 & 0 & 1
-\end{pmatrix} \tag{9}
+\end{pmatrix}
 $$
 
 #### Параметры:
 - $\gamma$ — угол крена относительно оси Y;
 - $\vartheta$ — угол тангажа относительно оси X;
-- $ \psi$ — угол курса относительно оси Z.
+- $\psi$ — угол курса относительно оси Z.
 
 В астроинерциальном режиме осуществляется коррекция выходных параметров АИНС по широте, долготе и курсу, таким образом:
 
