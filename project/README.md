@@ -68,9 +68,9 @@ M_{АПСК}^{ЗПСК_{31}} & M_{АПСК}^{ЗПСК_{32}} & M_{АПСК}^{ЗП
 $$
 
 где:
-- $$ M_{_{11}АПСК}^{_ЗПСК} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
-- $$M_{_{12}АПСК}^{__ЗПСК} = \sin \alpha_1 \cdot \cos \alpha_2$$
-- $$M_{_{13}АПСК}^{___ЗПСК} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
+- $$ M_{_{11}АПСК}^{ЗПСК} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
+- $$M_{АПСК}^{ЗПСК}_{12} = \sin \alpha_1 \cdot \cos \alpha_2$$
+- $${M_{АПСК}^{ЗПСК}}_{13} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
 - $$M_{_{21}_АПСК}^{ЗПСК} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
 - $$M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2$$
 - $$M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
@@ -152,15 +152,6 @@ $$
 $$
 \arcsin \left (\frac{C_\psi \cdot M_{ГСК}^{МСК}}{C_\psi \cdot M_{ГСК}^{МСК}} \right)
 $$
-
-
-\phi = \arcsin \left( (C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{33} \right);
-
-\lambda = \arctan \left( \frac{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{32}}{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{31}} \right);
-
-\psi = \arctan \left( \frac{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{13}}{(C_{\psi} \cdot M_{\text{ГСК}}^{\text{МСК}})_{23}} \right).
-
-
 
 $$
 \lambda = \arctan \frac { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}} { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
