@@ -1,23 +1,4 @@
 $$
-\lambda = \arcsin  \frac {
-    \left(
-     { C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}} }
-     \right)
-     }
-     {
-        \left(
-             C_\psi \cdot M_{\text{ГСК}}^{\text{МСК}}
-        \right)} 
-$$
-
-$$
-\lambda = \arcsin  \frac {
-    \left( C_\psi \cdot M_{ГСК}^{МСК}_{33} \right)
-     }
-     {\left( C_\psi \cdot M_{ГСК}^{МСК}_{33} \right)} 
-$$
-
-$$
 \lambda = \arcsin  \frac 
     {
     \left( C_\psi \cdot M_{ГСК}^{МСК} \right)
@@ -26,14 +7,11 @@ $$
 $$
 
 $$
-\lambda = \arcsin  \frac {
-    \left( C_\psi \cdot M_{_{33}ГСК}^{МСК} \right)
+\lambda = \arcsin  \frac 
+    {
+    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}
      }
-     {\left( C_\psi \cdot M_{_{33}ГСК}^{МСК} \right)} 
-$$
-
-$$
-\varphi = \arcsin \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{33}
+     {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}} 
 $$
 
 # Описание программы для вычисления решения астроинерциального режима
