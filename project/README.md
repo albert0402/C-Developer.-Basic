@@ -1,19 +1,17 @@
+
+32 up
 $$
-\lambda = \arcsin  \frac 
+\lambda = \arctan  \frac 
     {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{33}} 
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}} 
 $$
 
-$$
-\lambda = \arcsin  \frac 
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}}
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{32}} 
-$$
+13 up
 
 $$
-\lambda = \arcsin  \frac 
-    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}
-    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{32}} 
+\lambda = \arctan  \frac 
+    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{23}} 
 $$
 
 # Описание программы для вычисления решения астроинерциального режима
@@ -167,12 +165,23 @@ $$
 \varphi = \arcsin \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{33}
 $$
 
+32 up
 $$
-\arcsin \left (\frac{C_\psi \cdot M_{ГСК}^{МСК}}{C_\psi \cdot M_{ГСК}^{МСК}} \right)
+\lambda = \arctan  \frac 
+    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{31}} 
 $$
 
 $$
 \lambda = \arctan \frac { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}} { \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
+$$
+
+13 up
+
+$$
+\lambda = \arctan  \frac 
+    {\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}
+    {{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)}_{23}} 
 $$
 
 $$\psi = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{13}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{23}}$$
