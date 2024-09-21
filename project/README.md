@@ -68,9 +68,9 @@ M_{АПСК}^{ЗПСК_{31}} & M_{АПСК}^{ЗПСК_{32}} & M_{АПСК}^{ЗП
 $$
 
 где:
-- $$ M_{11}_{АПСК}^{ЗПСК} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
-- $$ M_{АПСК_{12}}^{ЗПСК} = \sin \alpha_1 \cdot \cos \alpha_2$$
-- $$M_{_{13}АПСК}^{ЗПСК} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
+- $$ M_{_{11}АПСК}^{_ЗПСК} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
+- $$M_{_{12}АПСК}^{__ЗПСК} = \sin \alpha_1 \cdot \cos \alpha_2$$
+- $$M_{_{13}АПСК}^{___ЗПСК} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
 - $$M_{_{21}_АПСК}^{ЗПСК} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3$$
 - $$M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2$$
 - $$M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3$$
