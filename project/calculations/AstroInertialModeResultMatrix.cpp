@@ -1,4 +1,4 @@
-#pragma once
+#include "../calculations/AstroInertialModeResultMatrix.h"
 
 #include "../include/AstroMatrix.h"
 #include "../include/ConjugateMatrix.h"
@@ -24,7 +24,7 @@
 - гринвичское время s.
 */
 
-float astro_inertial_mode(
+void astro_inertial_mode(
                             float theta, float roll,
                             float alpha_1, float alpha_2, float alpha_3,
                             float alpha, float delta, float azimut,
@@ -85,5 +85,4 @@ float astro_inertial_mode(
     // Выводим результат
     printMatrix(AstroInertialModeResult, "Transition matrix M_APSK_to_ZPSK:");
 
-    return AstroInertialModeResult[3][3];
 }

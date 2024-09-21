@@ -1,4 +1,5 @@
-#pragma once
+#include "../calculations/CoorectionModeResultMatrix.h"
+
 
 #include "../include/GeographyMatrix.h"
 #include "../include/Rotation.h"
@@ -16,7 +17,7 @@
 - географическая долгота lambda.
 */
 
-float correction_mode(
+void correction_mode(
                         float psi,
                         float lambda, float phi,
                         float (&CoorectionModeResult)[3][3]){
@@ -38,6 +39,4 @@ float correction_mode(
 
     // Выводим результат
     printMatrix(CoorectionModeResult, "CoorectionModeResult matrix:");
-
-    return CoorectionModeResult[3][3];
 }

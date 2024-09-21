@@ -9,9 +9,9 @@ add_executable(
 
 	main.cpp
 
-	calculations/getAstroInertialModeResultMatrix.cpp
-	calculations/getCoorectionModeResultMatrix.cpp
-	calculations/getResult.cpp
+	calculations/AstroInertialModeResultMatrix.cpp
+	calculations/CoorectionModeResultMatrix.cpp
+	calculations/Result.cpp
 
 	src/AstroMatrix.cpp
 	src/ConjugateMatrix.cpp
