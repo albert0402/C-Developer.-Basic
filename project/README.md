@@ -10,19 +10,19 @@ $$ M_{МСК}^{АПСК} = C_\gamma \cdot C_\vartheta \cdot C_\psi \$$
 
 где:
 
-$$ C_\gamma = \begin{bmatrix*}
+$$ C_\gamma = \begin{pmatrix*}
 \cos \gamma & 0 & -\sin \gamma \\\
 0 & 1 & 0 \\\
 \sin \gamma & 0 & \cos \gamma
-\end{bmatrix*}$$
+\end{pmatrix*}$$
 
 
 $$
-C_\vartheta = \begin{vmatrix*}
+C_\vartheta = \begin{pmatrix*}
 1 & 0 & 0 \\
 0 & \cos \vartheta & \sin \vartheta \\
 0 & -\sin \vartheta & \cos \vartheta
-\end{vmatrix*}
+\end{pmatrix*}
 $$
 
 $$
@@ -33,14 +33,6 @@ C_\psi = \begin{pmatrix*}
 \end{pmatrix*}
 $$
 
-$$
-C_\psi = \Bigg( \begin{matrix}
-\cos \psi & -\sin \psi & 0 \\
-\sin \psi & \cos \psi & 0 \\
-0 & 0 & 1
-\end{matrix} \Bigg)
-$$
-
 #### Параметры:
 - $\gamma$ — угол крена относительно оси Y;
 - $\vartheta$ — угол тангажа относительно оси X;
@@ -48,120 +40,120 @@ $$
 
 В астроинерциальном режиме осуществляется коррекция выходных параметров АИНС по широте, долготе и курсу, таким образом:
 
-\[
+$$
 M_{ИСК}^{ЗПСК} = M_{АПСК}^{ЗПСК} \cdot C_\gamma \cdot C_\vartheta \cdot C_\psi \cdot M_{ГСК}^{МСК} \cdot M_{ИСК}^{ГСК}
-\]
+$$
 
 Отсюда получается основное уравнение астроинерциальной навигации:
 
-\[
+$$
 C_\psi \cdot M_{ГСК}^{МСК} = (C_\vartheta)^{-1} \cdot (C_\gamma)^{-1} \cdot (M_{АПСК}^{ЗПСК})^{-1} \cdot M_{ИСК}^{ЗПСК} \cdot (M_{ИСК}^{ГСК})^{-1} \tag{10}
-\]
+$$
 
 В левой части основного уравнения астронавигации осуществляется решение астроинерциальной задачи по вычислению навигационных параметров широта, долгота и курс (режим 1 - `astro_inertial`). 
 
-## Матрица \( M_{АПСК}^{ЗПСК} \)
+## Матрица $M_{АПСК}^{ЗПСК}$
 
-Матрица \( M_{АПСК}^{ЗПСК} \) будет иметь вид:
+Матрица $M_{АПСК}^{ЗПСК}$ будет иметь вид:
 
-\[
+$$
 M_{АПСК}^{ЗПСК} =
-\begin{pmatrix}
+\begin{pmatrix*}
 M_{АПСК}^{ЗПСК_{11}} & M_{АПСК}^{ЗПСК_{12}} & M_{АПСК}^{ЗПСК_{13}} \\
 M_{АПСК}^{ЗПСК_{21}} & M_{АПСК}^{ЗПСК_{22}} & M_{АПСК}^{ЗПСК_{23}} \\
 M_{АПСК}^{ЗПСК_{31}} & M_{АПСК}^{ЗПСК_{32}} & M_{АПСК}^{ЗПСК_{33}} 
-\end{pmatrix}
-\]
+\end{pmatrix*}
+$$
 
 где:
-- \[M_{АПСК}^{ЗПСК_{11}} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3\]
-- \[M_{АПСК}^{ЗПСК_{12}} = \sin \alpha_1 \cdot \cos \alpha_2\]
--\[M_{АПСК}^{ЗПСК_{13}} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3\]
-- \[M_{АПСК}^{ЗПСК_{21}} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3\]
-- \[M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2\]
-- \[M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3\]
-- \[M_{АПСК}^{ЗПСК_{31}} = \cos \alpha_2 \cdot \sin \alpha_3\]
-- \[M_{АПСК}^{ЗПСК_{32}} = -\sin \alpha_2\]
-- \[M_{АПСК}^{ЗПСК_{33}} = \cos \alpha_2 \cdot \cos \alpha_3\]
+- $$ M_{АПСК}^{ЗПСК_{11}} = \cos \alpha_1 \cdot \cos \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
+- $$ M_{АПСК}^{ЗПСК_{12}} = \sin \alpha_1 \cdot \cos \alpha_2 $$
+- $$ M_{АПСК}^{ЗПСК_{13}} = -\cos \alpha_1 \cdot \sin \alpha_3 + \sin \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3 $$
+- $$ M_{АПСК}^{ЗПСК_{21}} = -\sin \alpha_1 \cdot \cos \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \sin \alpha_3 $$
+- $$ M_{АПСК}^{ЗПСК_{22}} = \cos \alpha_1 \cdot \cos \alpha_2 $$
+- $$ M_{АПСК}^{ЗПСК_{23}} = \sin \alpha_1 \cdot \sin \alpha_3 + \cos \alpha_1 \cdot \sin \alpha_2 \cdot \cos \alpha_3 $$
+- $$ M_{АПСК}^{ЗПСК_{31}} = \cos \alpha_2 \cdot \sin \alpha_3 $$
+- $$ M_{АПСК}^{ЗПСК_{32}} = -\sin \alpha_2 $$
+- $$ M_{АПСК}^{ЗПСК_{33}} = \cos \alpha_2 \cdot \cos \alpha_3 $$
 
 #### Параметры:
-- \( \alpha_1\) — угол сопряжения звездного датчика и ИНС относительно оси Y;
-- \( \alpha_2\) — угол сопряжения звездного датчика и ИНС относительно оси Z;
-- \( \alpha_3\) — угол сопряжения звездного датчика и ИНС относительно оси Z;
+- $\alpha_1$ — угол сопряжения звездного датчика и ИНС относительно оси Y;
+- $\alpha_2$ — угол сопряжения звездного датчика и ИНС относительно оси Z;
+- $\alpha_3$ — угол сопряжения звездного датчика и ИНС относительно оси Z;
 
 
 ### Матрица перехода от ИСК к ЗПСК
 
 Матрица перехода определяется преобразованием ИСК в ЗПСК следующим образом:
 
-\[
-\mathbf{M_{ИСК}^{ЗПСК}} = 
+$$
+M_{ИСК}^{ЗПСК}= 
 \begin{pmatrix}
 M_{11}^{ИСК\to ЗПСК} & M_{12}^{ИСК\to ЗПСК} & M_{13}^{ИСК\to ЗПСК} \\
 M_{21}^{ИСК\to ЗПСК} & M_{22}^{ИСК\to ЗПСК} & M_{23}^{ИСК\to ЗПСК} \\
 M_{31}^{ИСК\to ЗПСК} & M_{32}^{ИСК\to ЗПСК} & M_{33}^{ИСК\to ЗПСК}
 \end{pmatrix}
-\]
+$$
 
 где:
-- \( M_{11}^{ИСК\to ЗПСК} = - \cos Az \cdot \sin \alpha - \sin Az \cdot \cos \alpha \cdot \sin \delta \)
-- \( M_{12}^{ИСК\to ЗПСК} = \cos Az \cdot \cos \alpha - \sin Az \cdot \sin \alpha \cdot \sin \delta \)
-- \( M_{13}^{ИСК\to ЗПСК} = \sin Az \cdot \cos \delta \)
-- \( M_{21}^{ИСК\to ЗПСК} = \sin Az \cdot \sin \alpha - \cos Az \cdot \cos \alpha \cdot \sin \delta \)
-- \( M_{22}^{ИСК\to ЗПСК} = - \sin Az \cdot \cos \alpha - \cos Az \cdot \sin \alpha \cdot \sin \delta \)
-- \( M_{23}^{ИСК\to ЗПСК} = \cos Az \cdot \cos \delta \)
-- \( M_{31}^{ИСК\to ЗПСК} = \cos \alpha \cdot \cos \delta \)
-- \( M_{32}^{ИСК\to ЗПСК} = \sin \alpha \cdot \cos \delta \)
-- \( M_{33}^{ИСК\to ЗПСК} = \sin \delta \)
+- $$ M_{11}^{ИСК\to ЗПСК} = - \cos Az \cdot \sin \alpha - \sin Az \cdot \cos \alpha \cdot \sin \delta $$
+- $$ M_{12}^{ИСК\to ЗПСК} = \cos Az \cdot \cos \alpha - \sin Az \cdot \sin \alpha \cdot \sin \delta $$
+- $$ M_{13}^{ИСК\to ЗПСК} = \sin Az \cdot \cos \delta $$
+- $$ M_{21}^{ИСК\to ЗПСК} = \sin Az \cdot \sin \alpha - \cos Az \cdot \cos \alpha \cdot \sin \delta $$
+- $$ M_{22}^{ИСК\to ЗПСК} = - \sin Az \cdot \cos \alpha - \cos Az \cdot \sin \alpha \cdot \sin \delta $$
+- $$ M_{23}^{ИСК\to ЗПСК} = \cos Az \cdot \cos \delta $$
+- $$ M_{31}^{ИСК\to ЗПСК} = \cos \alpha \cdot \cos \delta $$
+- $$ M_{32}^{ИСК\to ЗПСК} = \sin \alpha \cdot \cos \delta $$
+- $$ M_{33}^{ИСК\to ЗПСК} = \sin \delta $$
 
 #### Параметры:
-- \( \alpha \) — угол прямого восхождения;
-- \( \delta \) — угол склонения;
-- \( Az \) — азимут.
+- $\alpha$ — угол прямого восхождения;
+- $\delta$ — угол склонения;
+- $\Az$ — азимут.
 
 
 ### Матрица перехода от ИСК к ГСК
 
 Определение матрицы учёта суточного вращения Земли на основании поправки истинного гринвичского времени — матрица перехода от инерциальной системы координат (ИСК) к геоцентрической системе координат (ГСК):
 
-\[
-\mathbf{M_{ИСК}^{ГСК}} = 
+$$
+{M_{ИСК}^{ГСК}} = 
 \begin{pmatrix}
 \cos S & \sin S & 0 \\
 -\sin S & \cos S & 0 \\
 0 & 0 & 1
 \end{pmatrix}
-\]
+$$
 
 #### Параметры:
-- \( S \) — истинное гринвичское время на момент \( t \).
+- $\S$ — истинное гринвичское время на момент $\t$.
 
 
 В правой часть основного уравнения астронавигации осуществляется коррекция выходных параметров АИНС по широте, долготе и курсу (режим 2 - `correction`). 
 
-Элементы матрицы \[M_{ГСК}^{МСК}\]:
+Элементы матрицы $M_{ГСК}^{МСК}$:
 
-\[
+$$
 M_{ГСК}^{МСК} = \begin{pmatrix}
 -\sin \lambda & \cos \lambda & 0 \\
 \sin \varphi \cdot \cos \lambda & -\sin \varphi \cdot \sin \lambda & \cos \varphi \\
 \cos \varphi \cdot \cos \lambda & \cos \varphi \cdot \sin \lambda & \sin \varphi
 \end{pmatrix}
-\]
+$$
 
 являются функциями широты и долготы, имеем:
 
-\[
-\varphi = \arcsin \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{33} \tag{11}
-\]
+$$
+\varphi = \arcsin \left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{33}
+$$
 
-\[
-\lambda = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}} \tag{12}
-\]
+$$
+\lambda = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{32}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{31}}
+$$
 
-\[
-\psi = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{13}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{23}} \tag{13}
-\]
+$$
+\psi = \arctan \frac{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{13}}{\left( C_\psi \cdot M_{ГСК}^{МСК} \right)_{23}} 
+$$
 
 ### Логика выбора режима:
 
