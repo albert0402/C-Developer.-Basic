@@ -1,28 +1,12 @@
-#include "../calculations/AstroInertialModeResultMatrix.h"
+#include "../include/AstroInertialModeResultMatrix.h"
 
-#include "../include/AstroMatrix.h"
-#include "../include/ConjugateMatrix.h"
-#include "../include/Rotation.h"
-#include "../include/TimeMatrix.h"
-#include "../include/Matrix.h"
+#include "../../matrixs/include/AstroMatrix.h"
+#include "../../matrixs/include/ConjugateMatrix.h"
+#include "../../matrixs/include/Rotation.h"
+#include "../../matrixs/include/TimeMatrix.h"
+#include "../../matrixs/include/Matrix.h"
 
 #include <iostream>
-
-/************************************/
-/*      Астроинерциальный режим     */
-/************************************/
-
-/* Используемые параметры:
-- угол тангажа theta;
-- угол крена roll;
-- калибровочная поправка (сопряжение) по оси X alpha_1
-- калибровочная поправка (сопряжение) по оси Y alpha_2
-- калибровочная поправка (сопряжение) по оси Z alpha_3
-- прямое восхождение alpha;
-- склонение delta;
-- азимут azimut;
-- гринвичское время s.
-*/
 
 void astro_inertial_mode(
                             float theta, float roll,
@@ -31,20 +15,20 @@ void astro_inertial_mode(
                             float s,
                             float (&AstroInertialModeResult)[3][3]){
     
-    // Создаем объекты классов
-    Rotation rotation(0.0f, theta, roll);
-    ConjugateMatrix conjugate(alpha_1, alpha_2, alpha_3);
-    AstroMatrix astro(alpha, delta, azimut); 
-    TimeMatrix time(s);
+    // Создание объекты классов
+    Rotation rotation(0.0f, theta, roll);  // Задание углов для вращения
+    ConjugateMatrix conjugate(alpha_1, alpha_2, alpha_3); // Задание углов сопряжения
+    AstroMatrix astro(alpha, delta, azimut); // Задание углов полученных от звездного датчика
+    TimeMatrix time(s); // Задание угла коорекции исходя из истинного гринвичского времени 
 
-    // Вычисляем матрицы
+    // Вычисление матриц
     rotation.computeC_theta();
     rotation.computeC_gamma();
     conjugate.computeConjugateMatrix();
     astro.computeAstroMatrix();
     time.computeTimeMatrix();
 
-    // Получаем указатели на матрицы
+    // Получение указателей на матрицы
     float (*C_theta)[3][3] = rotation.getC_theta();
     float (*C_gamma)[3][3] = rotation.getC_gamma();
     float (*ConjugateMatrix)[3][3] = conjugate.getConjugateMatrix();
@@ -76,13 +60,13 @@ void astro_inertial_mode(
     // Временная переменная для хранения результата
     float temp[3][3];
 
-    // Перемножаем матрицы
+    // Перемножение матриц
     multiplyMatrix(invC_theta, invC_gamma, temp);         
     multiplyMatrix(temp, invConjugateMatrix, temp);
     multiplyMatrix(temp, *AstroMatrix, temp);
     multiplyMatrix(temp, invTimeMatrix, AstroInertialModeResult);
 
-    // Выводим результат
+    // Вывод результата
     printMatrix(AstroInertialModeResult, "Transition matrix M_APSK_to_ZPSK:");
 
 }

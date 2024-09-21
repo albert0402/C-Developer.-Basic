@@ -3,9 +3,9 @@
 #include <string>
 #include <cmath>   // Для M_PI
 
-#include "calculations/Result.h"
-#include "calculations/AstroInertialModeResultMatrix.h"
-#include "calculations/CoorectionModeResultMatrix.h"
+#include "calculations/include/Result.h"
+#include "calculations/include/AstroInertialModeResultMatrix.h"
+#include "calculations/include/CoorectionModeResultMatrix.h"
 
 // Функция для чтения float значений с консоли
 void readParameter(const std::string& paramName, float& param) {

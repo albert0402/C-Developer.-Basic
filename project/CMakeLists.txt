@@ -3,21 +3,22 @@ project(final_project)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(include)
 
 add_executable(
 	main
 
 	main.cpp
 
-	calculations/AstroInertialModeResultMatrix.cpp
-	calculations/CoorectionModeResultMatrix.cpp
-	calculations/Result.cpp
+	calculations/src/AstroInertialModeResultMatrix.cpp
+	calculations/src/CoorectionModeResultMatrix.cpp
+	calculations/src/Result.cpp
 
-	src/AstroMatrix.cpp
-	src/ConjugateMatrix.cpp
-	src/GeographyMatrix.cpp
-	src/Matrix.cpp
-	src/Rotation.cpp
-	src/TimeMatrix.cpp
+	matrixs/src/AstroMatrix.cpp
+	matrixs/src/ConjugateMatrix.cpp
+	matrixs/src/GeographyMatrix.cpp
+	matrixs/src/Matrix.cpp
+	matrixs/src/Rotation.cpp
+	matrixs/src/TimeMatrix.cpp
 )
 

@@ -1,6 +1,6 @@
-#include "../calculations/Result.h"
+#include "../include/Result.h"
 
-// Реализация общей функции для вычисления широты, долготы и курса
+// Реализация функции для вычисления широты, долготы и курса
 NavigationData computeNavigationData(const float (&matrix)[3][3]) {
     NavigationData navigation;
     
