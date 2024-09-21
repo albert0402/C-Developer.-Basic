@@ -4,11 +4,11 @@ $$
 $$
 
 $$
-\lambda = \arcsin  (\frac \left {C_\psi \cdot M_{ГСК}^{МСК}} \right {C_\psi \cdot M_{ГСК}^{МСК}} )
+\lambda = \arcsin  \frac \left {C_\psi \cdot M_{ГСК}^{МСК}} \right {C_\psi \cdot M_{ГСК}^{МСК}} 
 $$
 
 $$
-\lambda = \arcsin  (\frac \left {C_\psi \cdot M_{ГСК}^{МСК}} \right_{13} {C_\psi \cdot M_{ГСК}^{МСК}} )
+\lambda = \arcsin  \frac \left( {C_\psi \cdot M_{ГСК}^{МСК}} \right) {C_\psi \cdot M_{ГСК}^{МСК}} 
 $$
 
 
