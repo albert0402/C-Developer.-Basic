@@ -150,7 +150,7 @@ $$
 $$
 
 $$
-\arcsin \left (\frac{C_\psi \cdot M_{ГСК}^{МСК}}{C_\psi \cdot M_{ГСК}^{МСК}})
+\arcsin \left (\frac{C_\psi \cdot M_{ГСК}^{МСК}}{C_\psi \cdot M_{ГСК}^{МСК}} \right)
 $$
 
 
