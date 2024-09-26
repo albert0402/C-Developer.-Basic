@@ -1,16 +1,15 @@
 #pragma once
 
+#include "../../matrixs/include/GeographyMatrix.h"
+#include "../../matrixs/include/Rotation.h"
+#include "../../matrixs/include/Matrix.h"
+
+#include <iostream>
+
 /************************************/
-/*          Режим коррекции         */
+/*        Матрица коррекции         */
 /************************************/
 
-/* Используемые параметры:
-- угол курса psi;
-- географическая широта phi;
-- географическая долгота lambda.
-*/
-
-void correction_mode(
-                        float psi,
-                        float lambda, float phi,
-                        float (&CoorectionModeResult)[3][3]);
+Matrix3x3 CorrectionMode(
+                        float Psi,
+                        float Phi, float Lambda);

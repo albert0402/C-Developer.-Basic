@@ -20,5 +20,8 @@ add_executable(
 	matrixs/src/Matrix.cpp
 	matrixs/src/Rotation.cpp
 	matrixs/src/TimeMatrix.cpp
+
+	modes/src/AstroInertialMode.cpp
+	modes/src/CorrectionMode.cpp
 )
 

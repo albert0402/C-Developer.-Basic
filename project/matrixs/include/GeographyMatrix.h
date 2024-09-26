@@ -1,10 +1,26 @@
 #pragma once
 
+#include "Matrix.h"
+
+#include <iostream>
+#include <cmath> // Для функций sin и cos 
+
 /************************************/
 /*  Матрица направляющих косинусов  */
 /************************************/
 
 class GeographyMatrix {
+private:
+
+/************************************/
+/*      Приватные члены класса      */
+/************************************/
+
+    float Phi;          // Широта
+    float Lambda;       // Долгота
+
+    Matrix3x3 Matrix;  // Матрица, которая будет содержать вычисленное значение матрицы астроизмерений
+
 public:
 
 /************************************/
@@ -12,42 +28,30 @@ public:
 /************************************/
     
     // Методы для установки значений
-    void setPhi(float phi);
-    void setLambda(float lambda);
+    void SetPhi(float Phi);
+    void SetLambda(float Lambda);
 
     // Методы для получения значений
-    float getPhi();
-    float getLambda();
+    float GetPhi();
+    float GetLambda();
 
-    // Метод для вывода значений на экран
-    void print();
-
+    // Метод для вывода значений приватных полей
+    void PrintParameters() const;
+    
 /************************************/
 /*          Работа с матрицей       */
 /************************************/
 
-    // Конструктор по умолчанию
-    GeographyMatrix();
-
-    // Конструктор с параметрами
-    GeographyMatrix(float phi, float lambda);
+    // Конструкторы
+    GeographyMatrix(); // Конструктор по умолчанию
+    GeographyMatrix(float phi, float lambda); // Конструктор с параметрами
 
     // Метод для вычисления матрицы
-    void computeGeographyMatrix();
-
-    // Метод для вывода матрицы
-    void printGeographyMatrix();
+    Matrix3x3 ComputeGeographyMatrix();
 
     // Метод для получения матрицы
-    float (*getGeographyMatrix())[3][3];
+    Matrix3x3 GetGeographyMatrix();
 
-/************************************/
-/*      Приватные члены класса      */
-/************************************/
-
-private:
-    private:
-    float phi;          // Широта
-    float lambda;       // Долгота
-    float matrix[3][3]; // Матрица 3x3 для хранения вычисленных значений
+    // Метод для вывода матрицы
+    void PrintGeographyMatrix() const;
 };

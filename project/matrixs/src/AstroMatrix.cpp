@@ -1,51 +1,43 @@
 #include "../include/AstroMatrix.h"
-#include "../include/Matrix.h"
-
-
-#include <iostream>
-#include <cmath> // Для функций sin и cos 
 
 /************************************/
 /*          Работа с углами         */
 /************************************/
 
-// Методы для установки значений
-void AstroMatrix::setAlpha(float alpha) {
-    this->alpha = alpha;
-    computeAstroMatrix(); // Обновляем матрицу при изменении угла
-
+// Методы для установки значений углов
+void AstroMatrix::SetAlpha(float Alpha) {
+    this->Alpha = Alpha;
+    ComputeAstroMatrix(); // Обновляем матрицу при изменении угла
 }
 
-void AstroMatrix::setDelta(float delta) {
-    this->delta = delta;
-    computeAstroMatrix(); // Обновляем матрицу при изменении угла
-
+void AstroMatrix::SetDelta(float Delta) {
+    this->Delta = Delta;
+    ComputeAstroMatrix(); // Обновляем матрицу при изменении угла
 }
 
-void AstroMatrix::setAzimut(float azimut) {
-    this->azimut = azimut;
-    computeAstroMatrix(); // Обновляем матрицу при изменении угла
-
+void AstroMatrix::SetAzimut(float Azimut) {
+    this->Azimut = Azimut;
+    ComputeAstroMatrix(); // Обновляем матрицу при изменении угла
 }
 
-// Методы для получения значений
-float AstroMatrix::getAlpha(){
-    return alpha;
+// Методы для получения значений углов
+float AstroMatrix::GetAlpha() {
+    return Alpha;
 }
 
-float AstroMatrix::getDelta(){
-    return delta;
+float AstroMatrix::GetDelta() {
+    return Delta;
 }
 
-float AstroMatrix::getAzimut(){
-    return azimut;
+float AstroMatrix::GetAzimut() {
+    return Azimut;
 }
 
-// Метод для вывода значений на экран
-void AstroMatrix::print(){
-    std::cout << "Alpha: " << alpha << std::endl;
-    std::cout << "Delta: " << delta << std::endl;
-    std::cout << "Azimut: " << azimut << std::endl;
+// Метод для вывода значений приватных параметров
+void AstroMatrix::PrintParameters() const {
+    std::cout << "Alpha: " << Alpha << std::endl;
+    std::cout << "Delta: " << Delta << std::endl;
+    std::cout << "Azimut: " << Azimut << std::endl;
 }
 
 /************************************/
@@ -53,38 +45,34 @@ void AstroMatrix::print(){
 /************************************/
 
 // Конструктор по умолчанию
-AstroMatrix::AstroMatrix() : alpha(0.0f), delta(0.0f), azimut(0.0f) {
-    // Инициализация матрицы нулями
-    initializeMatrix(matrix);
+AstroMatrix::AstroMatrix() : Alpha(0.0f), Delta(0.0f), Azimut(0.0f) {
+    Matrix.Reset(); // Инициализация матрицы нулями
 }
 
 // Конструктор с параметрами
-AstroMatrix::AstroMatrix(float a, float d, float az) : alpha(a), delta(d), azimut(az) {
-    computeAstroMatrix(); // Инициализация матрицы сразу при создании объекта
-} 
-
-// Метод для вычисления матрицы перехода
-void AstroMatrix::computeAstroMatrix() {
-    // Вычисление элементов матрицы
-    matrix[0][0] = -cos(azimut) * sin(alpha) - sin(azimut) * cos(alpha) * sin(delta);
-    matrix[0][1] = cos(azimut) * cos(alpha) - sin(azimut) * sin(alpha) * sin(delta);
-    matrix[0][2] = sin(azimut) * cos(delta);
-
-    matrix[1][0] = sin(azimut) * sin(alpha) - cos(azimut) * cos(alpha) * sin(delta);
-    matrix[1][1] = -sin(azimut) * cos(alpha) - cos(azimut) * sin(alpha) * sin(delta);
-    matrix[1][2] = cos(azimut) * cos(delta);
-
-    matrix[2][0] = cos(alpha) * cos(delta);
-    matrix[2][1] = sin(alpha) * cos(delta);
-    matrix[2][2] = sin(delta);
+AstroMatrix::AstroMatrix(float Alpha, float Delta, float Azimut) 
+    : Alpha(Alpha), Delta(Delta), Azimut(Azimut) {
+    ComputeAstroMatrix(); // Вычисляем матрицу при создании объекта
 }
 
-// Метод для вывода матрицы
-void AstroMatrix::printAstroMatrix(){
-    printMatrix(matrix, "Transition matrix M_ISK_to_ZPSK:");
+// Метод для вычисления матрицы
+Matrix3x3 AstroMatrix::ComputeAstroMatrix() {
+    Matrix3x3::MatrixType mat = {{
+        {-cos(Azimut) * sin(Alpha) - sin(Azimut) * cos(Alpha) * sin(Delta), cos(Azimut) * cos(Alpha) - sin(Azimut) * sin(Alpha) * sin(Delta), sin(Azimut) * cos(Delta)},
+        {sin(Azimut) * sin(Alpha) - cos(Azimut) * cos(Alpha) * sin(Delta), -sin(Azimut) * cos(Alpha) - cos(Azimut) * sin(Alpha) * sin(Delta), cos(Azimut) * cos(Delta)},
+        {cos(Alpha) * cos(Delta), sin(Alpha) * cos(Delta), sin(Delta)}
+    }};
+
+    Matrix.InitializeMatrix(mat); // Инициализация матрицы
+    return Matrix; // Возвращаем матрицу
 }
 
 // Метод для получения матрицы
-float (*AstroMatrix::getAstroMatrix())[3][3] {
-    return &matrix;
+Matrix3x3 AstroMatrix::GetAstroMatrix(){
+    return Matrix;
+}
+
+// Метод для вывода матрицы
+void AstroMatrix::PrintAstroMatrix() const {
+    Matrix.PrintMatrix("Astro Matrix:");
 }

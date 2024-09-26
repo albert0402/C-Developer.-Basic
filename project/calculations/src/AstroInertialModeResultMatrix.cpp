@@ -1,72 +1,45 @@
 #include "../include/AstroInertialModeResultMatrix.h"
 
-#include "../../matrixs/include/AstroMatrix.h"
-#include "../../matrixs/include/ConjugateMatrix.h"
-#include "../../matrixs/include/Rotation.h"
-#include "../../matrixs/include/TimeMatrix.h"
-#include "../../matrixs/include/Matrix.h"
+/************************************/
+/*     Астроинерциальная матрица    */
+/************************************/
 
-#include <iostream>
-
-void astro_inertial_mode(
-                            float theta, float roll,
-                            float alpha_1, float alpha_2, float alpha_3,
-                            float alpha, float delta, float azimut,
-                            float s,
-                            float (&AstroInertialModeResult)[3][3]){
+// Функция для вычисления AstroInertialMode
+Matrix3x3 AstroInertialMode(
+                            float Theta, float Gamma,
+                            float Alpha_1, float Alpha_2, float Alpha_3,
+                            float Alpha, float Delta, float Azimut,
+                            float S) {
     
-    // Создание объекты классов
-    Rotation rotation(0.0f, theta, roll);  // Задание углов для вращения
-    ConjugateMatrix conjugate(alpha_1, alpha_2, alpha_3); // Задание углов сопряжения
-    AstroMatrix astro(alpha, delta, azimut); // Задание углов полученных от звездного датчика
-    TimeMatrix time(s); // Задание угла коорекции исходя из истинного гринвичского времени 
+    // Создание объектов классов
+    Rotation rotation(0.0f, Theta, Gamma);  // Задание углов для вращения
+    ConjugateMatrix conjugate(Alpha_1, Alpha_2, Alpha_3); // Задание углов сопряжения
+    AstroMatrix astro(Alpha, Delta, Azimut); // Задание углов, полученных от звездного датчика
+    TimeMatrix time(S); // Задание угла коррекции исходя из истинного гринвичского времени 
 
     // Вычисление матриц
-    rotation.computeC_theta();
-    rotation.computeC_gamma();
-    conjugate.computeConjugateMatrix();
-    astro.computeAstroMatrix();
-    time.computeTimeMatrix();
-
-    // Получение указателей на матрицы
-    float (*C_theta)[3][3] = rotation.getC_theta();
-    float (*C_gamma)[3][3] = rotation.getC_gamma();
-    float (*ConjugateMatrix)[3][3] = conjugate.getConjugateMatrix();
-    float (*AstroMatrix)[3][3] = astro.getAstroMatrix();
-    float (*TimeMatrix)[3][3] = time.getTimeMatrix();
+    Matrix3x3 C_Theta = rotation.ComputeC_Theta();
+    Matrix3x3 C_Gamma = rotation.ComputeC_Gamma();
+    Matrix3x3 ConjugateMatrix = conjugate.ComputeConjugateMatrix();
+    Matrix3x3 AstroMatrix = astro.ComputeAstroMatrix();
+    Matrix3x3 TimeMatrix = time.ComputeTimeMatrix();
 
     // Обратные матрицы
-    float invC_theta[3][3];
-    float invC_gamma[3][3];
-    float invConjugateMatrix[3][3];
-    float invTimeMatrix[3][3];
-
-    if (!inverseMatrix(*C_theta, invC_theta)) {
-        std::cout << "Failed to invert matrix C_theta." << std::endl;
-    }
-
-    if (!inverseMatrix(*C_gamma, invC_gamma)) {
-        std::cout << "Failed to invert matrix C_gamma." << std::endl;
-    }
-    
-    if (!inverseMatrix(*ConjugateMatrix, invConjugateMatrix)) {
-        std::cout << "Failed to invert matrix ConjugateMatrix." << std::endl;
-    }
-
-    if (!inverseMatrix(*TimeMatrix, invTimeMatrix)) {
-        std::cout << "Failed to invert matrix TimeMatrix." << std::endl;
-    }
-
-    // Временная переменная для хранения результата
-    float temp[3][3];
+    Matrix3x3 inv_C_Theta = C_Theta.InverseMatrix();
+    Matrix3x3 inv_C_Gamma = C_Gamma.InverseMatrix();
+    Matrix3x3 inv_ConjugateMatrix = ConjugateMatrix.InverseMatrix();
+    Matrix3x3 inv_TimeMatrix = TimeMatrix.InverseMatrix();
 
     // Перемножение матриц
-    multiplyMatrix(invC_theta, invC_gamma, temp);         
-    multiplyMatrix(temp, invConjugateMatrix, temp);
-    multiplyMatrix(temp, *AstroMatrix, temp);
-    multiplyMatrix(temp, invTimeMatrix, AstroInertialModeResult);
+    Matrix3x3 Temp = Matrix3x3::MultiplyMatrix(inv_C_Theta, inv_C_Gamma);         
+    Temp = Matrix3x3::MultiplyMatrix(Temp, inv_ConjugateMatrix);
+    Temp = Matrix3x3::MultiplyMatrix(Temp, AstroMatrix);
+    Matrix3x3 AstroInertialModeResult = Matrix3x3::MultiplyMatrix(Temp, inv_TimeMatrix);
 
     // Вывод результата
-    printMatrix(AstroInertialModeResult, "Transition matrix M_APSK_to_ZPSK:");
+    std::string resultName = "AstroInertialModeResult Matrix:";
+    AstroInertialModeResult.PrintMatrix(resultName);
 
+    // Возврат итоговой матрицы
+    return AstroInertialModeResult;
 }

@@ -1,47 +1,43 @@
 #include "../include/ConjugateMatrix.h"
-#include "../include/Matrix.h"
-
-#include <iostream>
-#include <cmath>
 
 /************************************/
 /*          Работа с углами         */
 /************************************/
 
 // Методы для установки значений углов
-void ConjugateMatrix::setAlpha1(float alpha1) {
-    this->alpha1 = alpha1;
-    computeConjugateMatrix(); // Обновляем матрицу при изменении угла
+void ConjugateMatrix::SetAlpha1(float Alpha1) {
+    this->Alpha1 = Alpha1;
+    ComputeConjugateMatrix(); // Обновляем матрицу при изменении угла
 }
 
-void ConjugateMatrix::setAlpha2(float alpha2) {
-    this->alpha2 = alpha2;
-    computeConjugateMatrix(); // Обновляем матрицу при изменении угла
+void ConjugateMatrix::SetAlpha2(float Alpha2) {
+    this->Alpha2 = Alpha2;
+    ComputeConjugateMatrix(); // Обновляем матрицу при изменении угла
 }
 
-void ConjugateMatrix::setAlpha3(float alpha3) {
-    this->alpha3 = alpha3;
-    computeConjugateMatrix(); // Обновляем матрицу при изменении угла
+void ConjugateMatrix::SetAlpha3(float Alpha3) {
+    this->Alpha3 = Alpha3;
+    ComputeConjugateMatrix(); // Обновляем матрицу при изменении угла
 }
 
 // Методы для получения значений углов
-float ConjugateMatrix::getAlpha1(){
-    return alpha1;
+float ConjugateMatrix::GetAlpha1(){
+    return Alpha1;
 }
 
-float ConjugateMatrix::getAlpha2(){
-    return alpha2;
+float ConjugateMatrix::GetAlpha2(){
+    return Alpha2;
 }
 
-float ConjugateMatrix::getAlpha3(){
-    return alpha3;
+float ConjugateMatrix::GetAlpha3(){
+    return Alpha3;
 }
 
-// Метод для вывода значений углов
-void ConjugateMatrix::print(){
-    std::cout << "Alpha1: " << alpha1 << std::endl;
-    std::cout << "Alpha2: " << alpha2 << std::endl;
-    std::cout << "Alpha3: " << alpha3 << std::endl;
+// Метод для вывода значений приватных параметров
+void ConjugateMatrix::PrintParameters() const {
+    std::cout << "Alpha1: " << Alpha1 << std::endl;
+    std::cout << "Alpha2: " << Alpha2 << std::endl;
+    std::cout << "Alpha3: " << Alpha3 << std::endl;
 }
 
 /************************************/
@@ -49,37 +45,34 @@ void ConjugateMatrix::print(){
 /************************************/
 
 // Конструктор по умолчанию
-ConjugateMatrix::ConjugateMatrix() : alpha1(0.0f), alpha2(0.0f), alpha3(0.0f) {
-    // Инициализация матрицы нулями
-    initializeMatrix(matrix);
+ConjugateMatrix::ConjugateMatrix() : Alpha1(0.0f), Alpha2(0.0f), Alpha3(0.0f) {
+    Matrix.Reset(); // Инициализация матрицы нулями
 }
 
 // Конструктор с параметрами
-ConjugateMatrix::ConjugateMatrix(float a1, float a2, float a3) : alpha1(a1), alpha2(a2), alpha3(a3) {
-    computeConjugateMatrix(); // Инициализация матрицы сразу при создании объекта
+ConjugateMatrix::ConjugateMatrix(float Alpha1, float Alpha2, float Alpha3)
+    : Alpha1(Alpha1), Alpha2(Alpha2), Alpha3(Alpha3) {
+    ComputeConjugateMatrix(); // Вычисляем матрицу при создании объекта
 }
 
 // Метод для вычисления матрицы
-void ConjugateMatrix::computeConjugateMatrix() {
-    matrix[0][0] = cos(alpha1) * cos(alpha3) + sin(alpha1) * sin(alpha2) * sin(alpha3);
-    matrix[0][1] = sin(alpha1) * cos(alpha2);
-    matrix[0][2] = -cos(alpha1) * sin(alpha3) + sin(alpha1) * sin(alpha2) * cos(alpha3);
+Matrix3x3 ConjugateMatrix::ComputeConjugateMatrix() {
+    Matrix3x3::MatrixType mat = {{
+        {cos(Alpha1) * cos(Alpha3) + sin(Alpha1) * sin(Alpha2) * sin(Alpha3), sin(Alpha1) * cos(Alpha2), -cos(Alpha1) * sin(Alpha3) + sin(Alpha1) * sin(Alpha2) * cos(Alpha3)},
+        {-sin(Alpha1) * cos(Alpha3) + cos(Alpha1) * sin(Alpha2) * sin(Alpha3), cos(Alpha1) * cos(Alpha2), sin(Alpha1) * sin(Alpha3) + cos(Alpha1) * sin(Alpha2) * cos(Alpha3)},
+        {cos(Alpha2) * sin(Alpha3), -sin(Alpha2), cos(Alpha2) * cos(Alpha3)}
+    }};
 
-    matrix[1][0] = -sin(alpha1) * cos(alpha3) + cos(alpha1) * sin(alpha2) * sin(alpha3);
-    matrix[1][1] = cos(alpha1) * cos(alpha2);
-    matrix[1][2] = sin(alpha1) * sin(alpha3) + cos(alpha1) * sin(alpha2) * cos(alpha3);
+    Matrix.InitializeMatrix(mat); // Инициализация матрицы
+    return Matrix; // Возвращаем матрицу
+}
 
-    matrix[2][0] = cos(alpha2) * sin(alpha3);
-    matrix[2][1] = -sin(alpha2);
-    matrix[2][2] = cos(alpha2) * cos(alpha3);
+// Метод для получения матрицы
+Matrix3x3 ConjugateMatrix::GetConjugateMatrix(){
+    return Matrix;
 }
 
 // Метод для вывода матрицы
-void ConjugateMatrix::printConjugateMatrix(){
-    printMatrix(matrix, "Transition matrix M_APSK_to_ZPSK:");
-}
-
-// Геттер для матрицы
-float (*ConjugateMatrix::getConjugateMatrix())[3][3] {
-    return &matrix;
+void ConjugateMatrix::PrintConjugateMatrix() const {
+    Matrix.PrintMatrix("Conjugate Matrix:");
 }

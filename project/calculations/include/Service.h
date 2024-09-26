@@ -8,10 +8,10 @@
 /************************************/
 
 // Функция для преобразования градусов в радианы
-float DegreesToRadians(float degrees);
+float DegreesToRadians(float Degrees);
 
 // Функция для преобразования радиан в градусы
-float RadiansToDegrees(float radians);
+float RadiansToDegrees(float Radians);
 
 // Функция для чтения float значений с консоли
-void readParameter(const std::string& paramName, float& param);
+float ReadParameter(const std::string& ParamName);

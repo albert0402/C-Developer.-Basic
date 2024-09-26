@@ -1,31 +1,28 @@
 #include "../include/CoorectionModeResultMatrix.h"
 
-#include "../../matrixs/include/GeographyMatrix.h"
-#include "../../matrixs/include/Rotation.h"
-#include "../../matrixs/include/Matrix.h"
+/************************************/
+/*        Матрица коррекции         */
+/************************************/
 
-#include <iostream>
-
-void correction_mode(
-                        float psi,
-                        float lambda, float phi,
-                        float (&CoorectionModeResult)[3][3]){
+Matrix3x3 CorrectionMode(
+                        float Psi,
+                        float Phi, float Lambda) {
 
     // Создание объекты классов
-    Rotation rotation( psi, 0.0f, 0.0f);  // Задание углов для вращения
-    GeographyMatrix geography(phi, lambda); // Задание  широты и долготы
+    Rotation rotation( Psi, 0.0f, 0.0f);  // Задание угла для вращения
+    GeographyMatrix geography(Phi, Lambda); // Задание  широты и долготы
 
-    // Вычисляем матрицы вращений
-    rotation.computeC_psi();
-    geography.computeGeographyMatrix();
-
-    // Получение указателей на матрицы    
-    float (*C_psi)[3][3] = rotation.getC_psi();
-    float (*GeographyMatrix)[3][3] = geography.getGeographyMatrix();
+    // Перемножение матриц
+    Matrix3x3 C_Psi = rotation.ComputeC_Psi();
+    Matrix3x3 GeographyMatrix = geography.ComputeGeographyMatrix();
 
     // Получение матрицы CoorectionModeResult путем перемножение матрицы C_psi и матрицы GeographyMatrix
-    multiplyMatrix(*C_psi, *GeographyMatrix, CoorectionModeResult);
-
+    Matrix3x3 CoorectionModeResult = Matrix3x3::MultiplyMatrix(C_Psi, GeographyMatrix);
+    
     // Вывод результата
-    printMatrix(CoorectionModeResult, "CoorectionModeResult matrix:");
+    std::string resultName = "CoorectionModeResult Matrix:";
+    CoorectionModeResult.PrintMatrix(resultName);
+
+    // Возврат итоговой матрицы
+    return CoorectionModeResult;
 }

@@ -1,27 +1,23 @@
 #include "../include/TimeMatrix.h"
-#include "../include/Matrix.h"
-
-#include <iostream>
-#include <cmath>
 
 /************************************/
 /*          Работа с углом          */
 /************************************/
 
 // Метод для установки значения угла
-void TimeMatrix::setS(float s) {
-    this->s = s;
-    computeTimeMatrix(); // Обновляем матрицу при изменении угла
+void TimeMatrix::SetS(float S) {
+    this->S = S;
+    ComputeTimeMatrix(); // Обновляем матрицу при изменении угла
 }
 
 // Метод для получения значения угла
-float TimeMatrix::getS(){
-    return s;
+float TimeMatrix::GetS(){
+    return S;
 }
 
 // Метод для вывода значения угла на экран
-void TimeMatrix::print(){
-    std::cout << "S: " << s << std::endl;
+void TimeMatrix::PrintParameters() const {
+    std::cout << "S: " << S << std::endl;
 }
 
 /************************************/
@@ -29,36 +25,33 @@ void TimeMatrix::print(){
 /************************************/
 
 // Конструктор по умолчанию
-TimeMatrix::TimeMatrix() : s(0.0f) {
-    // Инициализация матрицы нулями
-    initializeMatrix(matrix);
+TimeMatrix::TimeMatrix() : S(0.0f) {
+    Matrix.Reset(); // Инициализация матрицы нулями
 }
 
 // Конструктор с параметрами
-TimeMatrix::TimeMatrix(float s) : s(s) {
-    computeTimeMatrix(); // Инициализация матрицы сразу при создании объекта
+TimeMatrix::TimeMatrix(float S) : S(S) {
+    ComputeTimeMatrix(); // Вычисляем матрицу при создании объекта
 }
 
 // Метод для вычисления матрицы
-void TimeMatrix::computeTimeMatrix() {
-    matrix[0][0] = cos(s);
-    matrix[0][1] = sin(s);
-    matrix[0][2] = 0.0f;
-    matrix[1][0] = -sin(s);
-    matrix[1][1] = cos(s);
-    matrix[1][2] = 0.0f;
-    matrix[2][0] = 0.0f;
-    matrix[2][1] = 0.0f;
-    matrix[2][2] = 1.0f;
+Matrix3x3 TimeMatrix::ComputeTimeMatrix() {
+    Matrix3x3::MatrixType mat = {{
+        {cos(S), sin(S), 0.0f},
+        {-sin(S), cos(S), 0.0f},
+        {0.0f, 0.0f, 1.0f}
+    }};
+
+    Matrix.InitializeMatrix(mat); // Инициализация матрицы
+    return Matrix; // Возвращаем матрицу
+}
+
+// Метод для получения матрицы
+Matrix3x3 TimeMatrix::GetTimeMatrix(){
+    return Matrix;
 }
 
 // Метод для вывода матрицы
-void TimeMatrix::printTimeMatrix(){
-    printMatrix(matrix,  "Rotation matrix M_ISK_to_GSK:");
-
-}
-
-// Геттер для матрицы
-float (*TimeMatrix::getTimeMatrix())[3][3] {
-    return &matrix;
+void TimeMatrix::PrintTimeMatrix() const{
+   Matrix.PrintMatrix("TimeMatrix:");
 }
