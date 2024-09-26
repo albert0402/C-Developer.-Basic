@@ -57,49 +57,54 @@ void Sequential_Container<T>::push_back(const T value) {
 template <typename T>
 void Sequential_Container<T>::insert(const T value, unsigned int index) {
 
-    if (!is_index_correct(index-1)) {
+    if (!is_index_correct(index)) {
         std::cout << "Incorrect index" << std::endl;
         return;
     }
 
     T *new_buffer = new T[current_size + 1];
 
-    for (unsigned int i = 0; i < index-1; ++i) {
+    for (unsigned int i = 0; i < index; ++i) {
         new_buffer[i] = buffer[i];
     }
 
-    new_buffer[index-1] = value;
+    new_buffer[index] = value;
 
-    for (unsigned int i = index; i <= current_size+1; ++i) {
-        new_buffer[i] = buffer[i-1];
+    for (unsigned int i = index + 1; i <= current_size; ++i) {
+        new_buffer[i] = buffer[i - 1];
     }
+
     delete[] buffer;
+
     buffer = new_buffer;
+
     current_size += 1;
 }
 
-template <typename  T>
+template <typename T>
 void Sequential_Container<T>::erase(const unsigned int index) {
 
-    if (current_size == 0) return;
+    if (current_size == 0) return; 
 
-    if (!is_index_correct(index-1)) {
+    if (!is_index_correct(index)) {
         std::cout << "Incorrect index" << std::endl;
         return;
     }
 
-    T *new_buffer = new T[current_size-1];
+    T *new_buffer = new T[current_size - 1];
 
-    unsigned int j=0;
+    unsigned int j = 0;
     for (unsigned int i = 0; i < current_size; ++i) {
-
-        if (i == index-1) i++;
-        new_buffer[j] = buffer[i];
-        j++;
+        if (i != index) {  
+            new_buffer[j] = buffer[i];
+            j++;
+        }
     }
+
     delete[] buffer;
     buffer = new_buffer;
-    current_size -=1;
+
+    current_size -= 1;
 }
 
 template<typename T>
