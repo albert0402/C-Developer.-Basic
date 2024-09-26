@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../calculations/include/CoorectionModeResultMatrix.h"
+#include "../../calculations/include/CorrectionModeResultMatrix.h"
 #include "../../calculations/include/Result.h"
 #include "../../calculations/include/Service.h"
 #include "../../matrixs/include/Matrix.h"

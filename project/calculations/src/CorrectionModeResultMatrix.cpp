@@ -1,4 +1,4 @@
-#include "../include/CoorectionModeResultMatrix.h"
+#include "../include/CorrectionModeResultMatrix.h"
 
 /************************************/
 /*        Матрица коррекции         */
